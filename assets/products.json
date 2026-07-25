@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Yaylaköy Çiçek Balı",
+    "description": "Edirne Keşan Yaylaköy bölgesinden elde edilen doğal çiçek balı.",
+    "price": "500 TL",
+    "weight": "1000 g",
+    "image": "assets/images/cicek-bali.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Yaylaköy Petek Bal",
+    "description": "Doğal petek yapısıyla hazırlanan özel üretim bal.",
+    "price": "500 TL",
+    "weight": "1000 g",
+    "image": "assets/images/petek-bal.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Doğal Polen",
+    "description": "Kendi arılarımızdan elde edilen doğal polen.",
+    "price": "Yakında",
+    "weight": "Belirlenecek",
+    "image": "assets/images/polen.jpg"
+  }
+]
