@@ -1,382 +1,242 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Edirne Keşan Yaylaköy'den doğal bal ve arı ürünleri. Kendi arılığımızdan sofralarınıza ulaşan saf lezzet.">
-    <meta name="keywords" content="doğal bal, yaylaköy bal, keşan bal, edirne bal, petek bal, çiçek balı, arı ürünleri">
-    <meta name="author" content="Yaylaköy Bal">
-    <meta property="og:title" content="Yaylaköy Doğal Bal">
-    <meta property="og:description" content="Edirne Keşan Yaylaköy'den kendi arılığımızdan doğal bal.">
-    <meta property="og:type" content="website">
-    <title>Yaylaköy Doğal Bal | Edirne Keşan</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
 
-    <!-- Stil dosyası -->
-    <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Saros Doğal Yayla Balı</title>
+
+<meta name="description" content="Edirne Keşan Yaylaköy doğal bal üreticisi Saros Doğal Yayla Balı">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
 
-    <!-- ==================== ÜST MENÜ ==================== -->
-    <header class="header" id="header">
-        <nav class="nav container">
-
-            <a href="#anasayfa" class="logo">
-                <span class="logo-icon">🐝</span>
-                <span class="logo-text">Yaylaköy Bal</span>
-            </a>
-
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#anasayfa" class="nav-link">Ana Sayfa</a></li>
-                <li><a href="#hikaye" class="nav-link">Hikayemiz</a></li>
-                <li><a href="#urunler" class="nav-link">Ürünler</a></li>
-                <li><a href="#galeri" class="nav-link">Galeri</a></li>
-                <li><a href="#iletisim" class="nav-link">İletişim</a></li>
-            </ul>
-
-            <button class="nav-toggle" id="nav-toggle" aria-label="Menüyü aç">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-        </nav>
-    </header>
-
-
-    <!-- ==================== ANA SAYFA (HERO) ==================== -->
-    <section id="anasayfa" class="hero">
-
-        <div class="hero-bg">
-            <img src="images/hero-bal.jpg" alt="Yaylaköy doğal bal" class="hero-img">
-            <div class="hero-overlay"></div>
-        </div>
-
-        <div class="hero-content container">
-            <p class="hero-badge">Edirne · Keşan · Yaylaköy</p>
-
-            <h1 class="hero-title">
-                Yaylaköy'den<br>
-                <span>Doğal Bal</span>
-            </h1>
-
-            <p class="hero-desc">
-                Kendi arılığımızdan özenle hasat ettiğimiz saf, katkısız balı
-                sofralarınıza ulaştırıyoruz.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#urunler" class="btn btn-primary">Ürünleri İncele</a>
-                <a href="#iletisim" class="btn btn-outline">Sipariş Ver</a>
-            </div>
-        </div>
-
-        <div class="hero-scroll">
-            <a href="#hikaye" aria-label="Aşağı kaydır">↓</a>
-        </div>
-
-    </section>
-
-
-    <!-- ==================== HİKAYEMİZ ==================== -->
-    <section id="hikaye" class="section story">
-        <div class="container">
-
-            <div class="section-header">
-                <span class="section-tag">Hikayemiz</span>
-                <h2>Biz Kimiz?</h2>
-            </div>
-
-            <div class="story-grid">
-
-                <div class="story-text">
-                    <p>
-                        Yıllardır arıcılıkla uğraşıyor, kendi arılarımızdan elde ettiğimiz balları
-                        özenle hazırlıyoruz. Yaylaköy'ün temiz havası, zengin florası ve doğal
-                        ortamı sayesinde arılarımız en kaliteli nektarı topluyor.
-                    </p>
-                    <p>
-                        Hiçbir katkı maddesi, şeker veya koruyucu kullanmadan; sadece arıların
-                        emeğiyle oluşan ürünleri sizlerle buluşturuyoruz. Her kavanoz, doğanın
-                        kendisinden gelen bir lezzet.
-                    </p>
-
-                    <ul class="story-features">
-                        <li>
-                            <span class="feature-icon">🌿</span>
-                            <div>
-                                <strong>100% Doğal</strong>
-                                <p>Katkısız, saf bal</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="feature-icon">🏡</span>
-                            <div>
-                                <strong>Kendi Arılığımız</strong>
-                                <p>Yaylaköy'de üretim</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="feature-icon">✨</span>
-                            <div>
-                                <strong>Geleneksel Yöntem</strong>
-                                <p>Özenli hasat & paketleme</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="story-image">
-                    <img src="images/arilik.jpg" alt="Yaylaköy arılığımız" loading="lazy">
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ==================== ÜRÜNLER ==================== -->
-    <section id="urunler" class="section products">
-        <div class="container">
-
-            <div class="section-header">
-                <span class="section-tag">Ürünler</span>
-                <h2>Ürünlerimiz</h2>
-                <p class="section-desc">Doğanın en saf hediyeleri</p>
-            </div>
-
-            <div class="products-grid">
-
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="images/cicek-bali.jpg" alt="Çiçek Balı" loading="lazy">
-                    </div>
-                    <div class="product-body">
-                        <h3>Çiçek Balı</h3>
-                        <p>Yaylaköy florasından toplanan, hafif ve aromatik doğal çiçek balı.</p>
-                        <div class="product-meta">
-                            <span class="product-weight">450g / 1kg</span>
-                        </div>
-                        <a href="#iletisim" class="btn btn-sm">Sipariş Ver</a>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="images/petek-bal.jpg" alt="Petek Bal" loading="lazy">
-                    </div>
-                    <div class="product-body">
-                        <h3>Petek Bal</h3>
-                        <p>Doğal petek yapısıyla sunulan, arıların kendi yaptığı bal.</p>
-                        <div class="product-meta">
-                            <span class="product-weight">Çeşitli boyutlar</span>
-                        </div>
-                        <a href="#iletisim" class="btn btn-sm">Sipariş Ver</a>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="images/polen.jpg" alt="Arı Poleni" loading="lazy">
-                    </div>
-                    <div class="product-body">
-                        <h3>Arı Poleni</h3>
-                        <p>Protein ve vitamin deposu, taze arı poleni.</p>
-                        <div class="product-meta">
-                            <span class="product-weight">100g / 250g</span>
-                        </div>
-                        <a href="#iletisim" class="btn btn-sm">Sipariş Ver</a>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="images/propolis.jpg" alt="Propolis" loading="lazy">
-                    </div>
-                    <div class="product-body">
-                        <h3>Propolis</h3>
-                        <p>Doğal antibakteriyel özellikleriyle bilinen arı propolisi.</p>
-                        <div class="product-meta">
-                            <span class="product-weight">20ml / 30ml</span>
-                        </div>
-                        <a href="#iletisim" class="btn btn-sm">Sipariş Ver</a>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ==================== GALERİ ==================== -->
-    <section id="galeri" class="section gallery">
-        <div class="container">
-
-            <div class="section-header">
-                <span class="section-tag">Galeri</span>
-                <h2>Arılığımızdan Görüntüler</h2>
-                <p class="section-desc">Hasat, arılık ve üretim sürecimizden kareler</p>
-            </div>
-
-            <div class="gallery-grid">
-
-                <div class="gallery-item">
-                    <img src="images/galeri-1.jpg" alt="Arılık görüntüsü 1" loading="lazy">
-                </div>
-
-                <div class="gallery-item">
-                    <img src="images/galeri-2.jpg" alt="Arılık görüntüsü 2" loading="lazy">
-                </div>
-
-                <div class="gallery-item gallery-item-wide">
-                    <img src="images/galeri-3.jpg" alt="Arılık görüntüsü 3" loading="lazy">
-                </div>
-
-                <div class="gallery-item">
-                    <img src="images/galeri-4.jpg" alt="Arılık görüntüsü 4" loading="lazy">
-                </div>
-
-                <div class="gallery-item">
-                    <img src="images/galeri-5.jpg" alt="Arılık görüntüsü 5" loading="lazy">
-                </div>
-
-                <div class="gallery-item">
-                    <img src="images/galeri-6.jpg" alt="Arılık görüntüsü 6" loading="lazy">
-                </div>
-
-            </div>
-
-            <div class="video-section">
-                <h3>Hasat Anından</h3>
-                <div class="video-wrapper">
-                    <!-- Video eklemek için aşağıdaki satırları açın -->
-                    <!--
-                    <video controls poster="images/video-poster.jpg">
-                        <source src="videos/hasat.mp4" type="video/mp4">
-                        Tarayıcınız video etiketini desteklemiyor.
-                    </video>
-                    -->
-                    <img src="images/video-poster.jpg" alt="Hasat videosu" class="video-poster">
-                    <div class="video-play-hint">▶️ Video eklemek için videos/hasat.mp4 koyun</div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- ==================== İLETİŞİM ==================== -->
-    <section id="iletisim" class="section contact">
-        <div class="container">
-
-            <div class="section-header">
-                <span class="section-tag">İletişim</span>
-                <h2>Bize Ulaşın</h2>
-                <p class="section-desc">Sipariş ve bilgi için bizimle iletişime geçebilirsiniz</p>
-            </div>
-
-            <div class="contact-grid">
-
-                <div class="contact-info">
-
-                    <div class="contact-card">
-                        <span class="contact-icon">📍</span>
-                        <div>
-                            <h4>Adres</h4>
-                            <p>Edirne · Keşan · Yaylaköy</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-card">
-                        <span class="contact-icon">📞</span>
-                        <div>
-                            <h4>Telefon</h4>
-                            <p><a href="tel:+905XXXXXXXXX">+90 5XX XXX XX XX</a></p>
-                        </div>
-                    </div>
-
-                    <div class="contact-card">
-                        <span class="contact-icon">💬</span>
-                        <div>
-                            <h4>WhatsApp</h4>
-                            <p>
-                                <a href="https://wa.me/905XXXXXXXXX" target="_blank" rel="noopener" class="whatsapp-link">
-                                    Mesaj Gönder
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="contact-card">
-                        <span class="contact-icon">✉️</span>
-                        <div>
-                            <h4>E-posta</h4>
-                            <p><a href="mailto:info@yaylakoybal.com">info@yaylakoybal.com</a></p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <form class="contact-form" id="contact-form">
-
-                    <div class="form-group">
-                        <label for="name">Adınız</label>
-                        <input type="text" id="name" name="name" required placeholder="Adınız Soyadınız">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Telefon</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Mesajınız</label>
-                        <textarea id="message" name="message" rows="4" required placeholder="Sipariş veya sorunuz..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-full">Gönder</button>
-                    <p class="form-note">Form gönderildiğinde WhatsApp üzerinden de iletişime geçebilirsiniz.</p>
-
-                </form>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="logo-icon">🐝</span>
-                    <span>Yaylaköy Bal</span>
-                </div>
-                <p class="footer-text">
-                    Edirne Keşan Yaylaköy'den doğal bal ve arı ürünleri.
-                </p>
-                <p class="footer-copy">
-                    © 2026 Yaylaköy Bal. Tüm hakları saklıdır.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-
-    <!-- ==================== WHATSAPP YÜZEN BUTON ==================== -->
-    <a href="https://wa.me/905XXXXXXXXX" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor">
-            <path d="M16.1 3C9.3 3 3.8 8.5 3.8 15.3c0 2.1.6 4.2 1.6 6L3 29l7.9-2.1c1.7.9 3.6 1.4 5.5 1.4 6.8 0 12.3-5.5 12.3-12.3S22.9 3 16.1 3zm0 22.4c-1.7 0-3.4-.5-4.9-1.3l-.3-.2-5.1 1.3 1.4-4.9-.2-.3c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.4 10-9.4 10z"/>
-            <path d="M22.1 18.6c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6 0-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.4.1-.1.2-.3.3-.4.1-.2.1-.3 0-.5-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/>
-        </svg>
-    </a>
-
-
-    <script src="script.js"></script>
+
+<header>
+
+<div class="logo">
+
+Saros Doğal Yayla Balı
+
+</div>
+
+
+<nav>
+
+<a href="#anasayfa">Ana Sayfa</a>
+
+<a href="#hikaye">Hikayemiz</a>
+
+<a href="#urunler">Ürünler</a>
+
+<a href="#iletisim">İletişim</a>
+
+</nav>
+
+
+</header>
+
+
+
+
+
+<section id="anasayfa">
+
+
+<h1>
+
+Saros Doğal<br>
+Yayla Balı
+
+</h1>
+
+
+<p>
+
+Edirne Keşan Yaylaköy'den
+doğal ve özenle hazırlanan bal.
+
+</p>
+
+
+<button>
+
+Ürünleri Keşfet
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+<section id="hikaye">
+
+
+<h2>
+
+Hikayemiz
+
+</h2>
+
+
+<p>
+
+Saros Doğal Yayla Balı,
+Ahmet Bakraç tarafından
+Yaylaköy'ün doğal ortamında
+arıcılık geleneğini yaşatmak amacıyla kurulmuştur.
+
+</p>
+
+
+<p>
+
+Kendi arılarımızdan elde ettiğimiz
+bal ve arı ürünlerini güvenilir şekilde
+sizlerle buluşturuyoruz.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+<section id="urunler">
+
+
+<h2>
+
+Ürünlerimiz
+
+</h2>
+
+
+<div>
+
+
+<article>
+
+<h3>
+Doğal Yayla Balı
+</h3>
+
+<p>
+Yaylaköy florasından elde edilen doğal bal.
+</p>
+
+</article>
+
+
+
+<article>
+
+<h3>
+Petek Bal
+</h3>
+
+<p>
+Doğal petek yapısıyla hazırlanan özel üretim.
+</p>
+
+</article>
+
+
+
+<article>
+
+<h3>
+Polen
+</h3>
+
+<p>
+Arılarımızdan elde edilen doğal polen.
+</p>
+
+</article>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="iletisim">
+
+
+<h2>
+
+İletişim
+
+</h2>
+
+
+<p>
+
+📍 Edirne - Keşan - Yaylaköy
+
+</p>
+
+
+<p>
+
+Saros Doğal Yayla Balı
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+<p>
+
+© 2026 Saros Doğal Yayla Balı
+
+</p>
+
+
+<p>
+
+Kurucu: Ahmet Bakraç
+
+</p>
+
+
+</footer>
+
+
+
+
+<script src="script.js"></script>
+
 
 </body>
+
 </html>
