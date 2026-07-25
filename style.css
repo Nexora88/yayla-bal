@@ -368,3 +368,27 @@ nav {
 
 
 }
+
+.logo img {
+
+    width: 180px;
+
+    height: auto;
+
+}
+
+
+
+#anasayfa span {
+
+    display:block;
+
+    margin-top:20px;
+
+    font-size:20px;
+
+    color:#f5d27a;
+
+    font-style:italic;
+
+}
