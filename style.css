@@ -512,3 +512,73 @@ nav {
     box-shadow:0 10px 30px rgba(0,0,0,0.2);
 
     }
+
+/* HİKAYE */
+
+.story {
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+
+.story p {
+
+    font-size:20px;
+
+    margin:25px 0;
+
+}
+
+
+
+.stats {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    margin-top:50px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.stats div {
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    min-width:180px;
+
+}
+
+
+
+.stats strong {
+
+    display:block;
+
+    font-size:30px;
+
+    color:#b87900;
+
+}
+
+
+.stats span {
+
+    color:#352515;
+
+}
