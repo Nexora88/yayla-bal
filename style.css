@@ -261,24 +261,67 @@ h2 {
 
 
 
-article {
+.products {
 
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.product-card {
 
     background:white;
 
-    width:300px;
+    width:320px;
 
-    padding:30px;
+    border-radius:25px;
 
-    border-radius:20px;
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
 
     text-align:center;
 
+    padding-bottom:25px;
 
-    box-shadow:
+}
 
-    0 10px 25px rgba(0,0,0,0.1);
 
+
+.product-card img {
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+
+}
+
+
+
+.product-card h3 {
+
+    color:#b87900;
+
+    font-size:25px;
+
+    margin:20px 0 10px;
+
+}
+
+
+
+.product-card p {
+
+    padding:0 20px;
 
 }
 
