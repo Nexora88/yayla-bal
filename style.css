@@ -719,3 +719,77 @@ nav {
     opacity:0.8;
 
 }
+
+/* ÜRÜN SAYFASI */
+
+.price {
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    color:#b87900;
+
+    margin:20px 0;
+
+}
+
+
+
+.stock {
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:20px;
+
+    font-weight:bold;
+
+}
+
+
+
+.available {
+
+    background:#dff5df;
+
+    color:#287a28;
+
+}
+
+
+
+.seasonal {
+
+    background:#fff1c7;
+
+    color:#9b6800;
+
+}
+
+
+
+.waiting {
+
+    background:#eeeeee;
+
+    color:#555;
+
+}
+
+
+
+.product-card h2 {
+
+    margin-top:20px;
+
+}
+
+
+
+.product-card p {
+
+    line-height:1.6;
+
+}
