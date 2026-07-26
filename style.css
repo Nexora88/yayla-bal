@@ -1,58 +1,54 @@
-/* 
-Saros Doğal Yayla Balı
-Ana Tasarım Dosyası
-*/
-
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
 }
 
 
 body {
 
-    font-family: "Georgia", serif;
+    font-family: 'Segoe UI', sans-serif;
 
-    background: #fff8e8;
+    background:#fffaf0;
 
-    color: #352515;
+    color:#3d2b1f;
 
-    line-height: 1.6;
+    line-height:1.6;
 
 }
 
 
 
-/* HEADER */
+.header {
 
-header {
+    position:fixed;
 
-    width: 100%;
+    top:0;
 
-    padding: 20px 8%;
+    left:0;
 
-    display: flex;
+    width:100%;
 
-    justify-content: space-between;
+    display:flex;
 
-    align-items: center;
+    justify-content:space-between;
 
-    background: #18351f;
+    align-items:center;
 
-    color: white;
+    padding:20px 8%;
 
-    position: sticky;
+    background:rgba(255,250,240,0.95);
 
-    top: 0;
+    backdrop-filter:blur(10px);
 
-    z-index: 10;
+    z-index:1000;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
 
 }
 
@@ -60,11 +56,11 @@ header {
 
 .logo {
 
-    font-size: 24px;
+    font-size:26px;
 
-    font-weight: bold;
+    font-weight:800;
 
-    color: #e5ad32;
+    color:#b87900;
 
 }
 
@@ -72,9 +68,9 @@ header {
 
 nav {
 
-    display: flex;
+    display:flex;
 
-    gap: 25px;
+    gap:25px;
 
 }
 
@@ -82,11 +78,13 @@ nav {
 
 nav a {
 
-    color: white;
+    text-decoration:none;
 
-    text-decoration: none;
+    color:#3d2b1f;
 
-    font-weight: bold;
+    font-weight:600;
+
+    transition:.3s;
 
 }
 
@@ -94,174 +92,274 @@ nav a {
 
 nav a:hover {
 
-    color: #e5ad32;
+    color:#b87900;
 
 }
 
+/* HERO ALANI */
 
 
+.hero {
 
+    position:relative;
 
-/* ANA ALAN */
+    width:100%;
 
+    height:100vh;
 
-#anasayfa {
-
-
-    min-height: 90vh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    padding: 8%;
-
-
-    background:
-
-    linear-gradient(
-
-    rgba(0,0,0,0.35),
-
-    rgba(0,0,0,0.35)
-
-    ),
-
-    url("assets/images/arilik.jpg");
-
-
-    background-size: cover;
-
-    background-position: center;
-
-
-    color:white;
-
-}
-
-
-
-#anasayfa h1 {
-
-    font-size: 65px;
-
-    margin-bottom: 20px;
-
-}
-
-
-
-#anasayfa p {
-
-    font-size: 22px;
-
-    max-width: 600px;
-
-}
-
-
-
-button {
-
-    margin-top: 30px;
-
-    width: 220px;
-
-    padding: 15px;
-
-    border: none;
-
-    border-radius: 30px;
-
-    background: #d89b20;
-
-    color:white;
-
-    font-size:18px;
-
-}
-
-
-
-
-
-/* GENEL BÖLÜMLER */
-
-
-section {
-
-    padding: 80px 8%;
-
-}
-
-
-
-h2 {
-
-    text-align:center;
-
-    font-size:40px;
-
-    color:#9b6500;
-
-    margin-bottom:40px;
-
-}
-
-
-
-
-
-/* HİKAYE */
-
-
-#hikaye {
-
-    background:#f4e2ae;
-
-}
-
-
-
-#hikaye p {
-
-    max-width:800px;
-
-    margin:20px auto;
-
-    text-align:center;
-
-    font-size:20px;
-
-}
-
-
-
-
-
-
-/* ÜRÜNLER */
-
-
-#urunler > div {
-
+    overflow:hidden;
 
     display:flex;
 
+    align-items:center;
+
     justify-content:center;
-
-    gap:30px;
-
-    flex-wrap:wrap;
-
 
 }
 
 
 
-.products {
+.hero img {
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:0;
+
+}
+
+
+
+.hero::after {
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,0.35);
+
+    z-index:1;
+
+}
+
+
+
+.hero-text {
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    color:white;
+
+    max-width:800px;
+
+    padding:20px;
+
+}
+
+
+
+.hero-text h1 {
+
+    font-size:60px;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+
+    font-weight:800;
+
+}
+
+
+
+.hero-text p {
+
+    font-size:24px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.hero-text a {
+
+    display:inline-block;
+
+    padding:15px 40px;
+
+    background:#d99a00;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:35px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+
+.hero-text a:hover {
+
+    background:#b87900;
+
+    transform:translateY(-3px);
+
+}
+
+/* HİKAYEMİZ */
+
+
+.story {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:60px;
+
+    padding:100px 8%;
+
+    background:#fffaf0;
+
+}
+
+
+
+.story-image {
+
+    flex:1;
+
+}
+
+
+
+.story-image img {
+
+    width:100%;
+
+    max-width:550px;
+
+    border-radius:30px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+
+}
+
+
+
+.story-text {
+
+    flex:1;
+
+}
+
+
+
+.story-text h2 {
+
+    font-size:42px;
+
+    color:#b87900;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.story-text p {
+
+    font-size:18px;
+
+    margin-bottom:18px;
+
+}
+
+
+
+.story-text a {
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:12px 30px;
+
+    background:#b87900;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+
+.story-text a:hover {
+
+    background:#8f5d00;
+
+}
+
+/* ÖNE ÇIKAN ÜRÜNLER */
+
+
+.featured-products {
+
+    padding:100px 8%;
+
+    text-align:center;
+
+    background:#f8edd3;
+
+}
+
+
+
+.featured-products h2 {
+
+    font-size:42px;
+
+    color:#b87900;
+
+    margin-bottom:50px;
+
+}
+
+
+
+.product-container {
 
     display:flex;
 
@@ -275,27 +373,33 @@ h2 {
 
 
 
-.product-card {
-
-    background:white;
+.product-box {
 
     width:320px;
+
+    background:white;
 
     border-radius:25px;
 
     overflow:hidden;
 
-    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
 
-    text-align:center;
-
-    padding-bottom:25px;
+    transition:.3s;
 
 }
 
 
 
-.product-card img {
+.product-box:hover {
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.product-box img {
 
     width:100%;
 
@@ -307,400 +411,156 @@ h2 {
 
 
 
-.product-card h3 {
+.product-box h3 {
+
+    font-size:26px;
 
     color:#b87900;
 
-    font-size:25px;
-
-    margin:20px 0 10px;
+    margin:25px 15px 10px;
 
 }
 
 
 
-.product-card p {
+.product-box p {
 
-    padding:0 20px;
+    padding:0 25px;
 
-}
-
-
-
-article h3 {
-
-    color:#b87900;
-
-    margin-bottom:15px;
+    font-size:16px;
 
 }
 
 
 
+.product-box strong {
 
+    display:block;
 
+    margin:25px;
 
-/* İLETİŞİM */
+    font-size:22px;
 
-
-#iletisim {
-
-    text-align:center;
+    color:#3d2b1f;
 
 }
 
 
 
+.all-products {
 
+    display:inline-block;
 
-/* FOOTER */
+    margin-top:45px;
 
+    padding:15px 35px;
 
-footer {
-
-    background:#18351f;
+    background:#b87900;
 
     color:white;
 
-    text-align:center;
+    text-decoration:none;
 
-    padding:30px;
+    border-radius:30px;
 
-}
+    font-weight:bold;
 
-
-
-
-
-
-/* TELEFON */
-
-@media(max-width:768px){
-
-
-header {
-
-    flex-direction:column;
-
-    gap:20px;
-
-}
-
-
-nav {
-
-    flex-direction:column;
-
-    text-align:center;
-
-}
-
-
-#anasayfa h1 {
-
-    font-size:42px;
-
-}
-
-
-#anasayfa p {
-
-    font-size:18px;
-
-}
-
-
-}
-
-.logo img {
-
-    width: 180px;
-
-    height: auto;
+    transition:.3s;
 
 }
 
 
 
-#anasayfa span {
+.all-products:hover {
 
-    display:block;
-
-    margin-top:20px;
-
-    font-size:20px;
-
-    color:#f5d27a;
-
-    font-style:italic;
-
-}
-
-.hero-content {
-
-    max-width:800px;
-
-}
-
-
-
-.hero-buttons {
-
-    display:flex;
-
-    gap:20px;
-
-    margin-top:30px;
-
-}
-
-
-
-.secondary-btn {
-
-    background:transparent;
-
-    border:2px solid #e5ad32;
-
-}
-
-
-
-.trust-box {
-
-    display:flex;
-
-    gap:30px;
-
-    margin-top:60px;
-
-    font-size:18px;
-
-}
-
-
-
-.trust-box div {
-
-    background:rgba(255,255,255,0.15);
-
-    padding:20px;
-
-    border-radius:15px;
-
-    text-align:center;
-
-    backdrop-filter:blur(5px);
-
-}
-
-
-
-@media(max-width:768px){
-
-.hero-buttons{
-
-    flex-direction:column;
-
-}
-
-
-.trust-box{
-
-    flex-direction:column;
-
-}
-
-}
-
-/* TANITIM VIDEO */
-
-#tanitim {
-
-    background:#fff3cf;
-
-    text-align:center;
-
-}
-
-
-.video-area p {
-
-    max-width:700px;
-
-    margin:20px auto;
-
-    font-size:18px;
-
-}
-
-
-
-.video-box {
-
-    max-width:900px;
-
-    margin:40px auto;
-
-}
-
-
-
-.video-box video {
-
-    width:100%;
-
-    border-radius:20px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
-
-    }
-
-/* HİKAYE */
-
-.story {
-
-    max-width:900px;
-
-    margin:auto;
-
-    text-align:center;
-
-}
-
-
-.story p {
-
-    font-size:20px;
-
-    margin:25px 0;
-
-}
-
-
-
-.stats {
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:30px;
-
-    margin-top:50px;
-
-    flex-wrap:wrap;
-
-}
-
-
-
-.stats div {
-
-    background:white;
-
-    padding:25px;
-
-    border-radius:20px;
-
-    min-width:180px;
-
-}
-
-
-
-.stats strong {
-
-    display:block;
-
-    font-size:30px;
-
-    color:#b87900;
-
-}
-
-
-.stats span {
-
-    color:#352515;
+    background:#8f5d00;
 
 }
 
 /* GALERİ */
 
 
-#galeri {
+.gallery-section {
 
-    background:#f4e2ae;
+    padding:100px 8%;
 
     text-align:center;
 
+    background:#fffaf0;
+
 }
 
 
 
-.gallery {
+.gallery-section h2 {
 
-    display:flex;
+    font-size:42px;
 
-    justify-content:center;
+    color:#b87900;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.gallery-section p {
+
+    font-size:18px;
+
+    margin-bottom:45px;
+
+}
+
+
+
+.gallery-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
 
     gap:25px;
 
-    flex-wrap:wrap;
-
 }
 
 
 
-.gallery img {
+.gallery-grid img {
 
-    width:300px;
+    width:100%;
 
     height:250px;
 
     object-fit:cover;
 
-    border-radius:20px;
+    border-radius:25px;
 
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
 
-}
-
-/* İLETİŞİM */
-
-
-.contact-box {
-
-    text-align:center;
-
-    max-width:700px;
-
-    margin:auto;
+    transition:.3s;
 
 }
 
 
 
-.contact-box p {
+.gallery-grid img:hover {
 
-    font-size:20px;
-
-    margin:20px;
+    transform:scale(1.05);
 
 }
 
 
 
-.whatsapp-btn {
+.gallery-button {
 
     display:inline-block;
 
-    margin-top:20px;
+    margin-top:45px;
 
     padding:15px 35px;
 
-    background:#25D366;
+    background:#b87900;
 
     color:white;
 
@@ -714,35 +574,127 @@ nav {
 
 
 
-.whatsapp-btn:hover {
 
-    opacity:0.8;
+
+/* GÜVEN ALANI */
+
+
+.trust {
+
+    padding:100px 8%;
+
+    background:#f8edd3;
+
+    text-align:center;
 
 }
 
-/* ÜRÜN SAYFASI */
 
-.price {
 
-    font-size:24px;
+.trust h2 {
 
-    font-weight:bold;
+    font-size:42px;
 
     color:#b87900;
 
-    margin:20px 0;
+    margin-bottom:50px;
 
 }
 
 
 
-.stock {
+.trust-container {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.trust-box {
+
+    background:white;
+
+    width:300px;
+
+    padding:35px 25px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+}
+
+
+
+.trust-box h3 {
+
+    color:#b87900;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+/* İLETİŞİM */
+
+
+.contact {
+
+    padding:100px 8%;
+
+    text-align:center;
+
+    background:#fffaf0;
+
+}
+
+
+
+.contact h2 {
+
+    font-size:42px;
+
+    color:#b87900;
+
+}
+
+
+
+.contact p {
+
+    max-width:700px;
+
+    margin:25px auto;
+
+    font-size:18px;
+
+}
+
+
+
+.whatsapp {
 
     display:inline-block;
 
-    padding:8px 18px;
+    padding:15px 40px;
 
-    border-radius:20px;
+    background:#25D366;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:35px;
 
     font-weight:bold;
 
@@ -750,46 +702,124 @@ nav {
 
 
 
-.available {
-
-    background:#dff5df;
-
-    color:#287a28;
-
-}
 
 
-
-.seasonal {
-
-    background:#fff1c7;
-
-    color:#9b6800;
-
-}
+/* FOOTER */
 
 
+footer {
 
-.waiting {
+    background:#3d2b1f;
 
-    background:#eeeeee;
+    color:white;
 
-    color:#555;
+    text-align:center;
+
+    padding:30px;
 
 }
 
 
 
-.product-card h2 {
 
-    margin-top:20px;
+
+/* MOBİL TASARIM */
+
+
+@media(max-width:900px) {
+
+
+.header {
+
+    flex-direction:column;
+
+    gap:15px;
 
 }
 
 
 
-.product-card p {
+nav {
 
-    line-height:1.6;
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+}
+
+
+
+.hero-text h1 {
+
+    font-size:40px;
+
+}
+
+
+
+.hero-text p {
+
+    font-size:18px;
+
+}
+
+
+
+.story {
+
+    flex-direction:column;
+
+    padding:70px 5%;
+
+}
+
+
+
+.story-text h2 {
+
+    font-size:34px;
+
+}
+
+
+
+.product-container {
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+
+.product-box {
+
+    width:100%;
+
+    max-width:350px;
+
+}
+
+
+
+.gallery-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.trust-container {
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
 
 }
