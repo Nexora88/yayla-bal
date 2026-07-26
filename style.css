@@ -625,3 +625,44 @@ nav {
     color:#352515;
 
 }
+
+/* GALERİ */
+
+
+#galeri {
+
+    background:#f4e2ae;
+
+    text-align:center;
+
+}
+
+
+
+.gallery {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.gallery img {
+
+    width:300px;
+
+    height:250px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+}
