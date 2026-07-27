@@ -1378,3 +1378,203 @@ nav ul {
 
 
 }
+
+/* ==========================
+   HAKKIMIZDA SAYFASI
+========================== */
+
+.about-hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.about-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.about-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 90%;
+    background: rgba(0,0,0,0.45);
+    padding: 40px 20px;
+    border-radius: 15px;
+}
+
+
+.about-overlay h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+    color: #d4af37;
+}
+
+
+.about-overlay p {
+    font-size: 22px;
+}
+
+
+
+/* Hikaye bölümü */
+
+.story {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 80px 8%;
+}
+
+
+.story-image {
+    flex: 1;
+}
+
+
+.story-image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+.story-text {
+    flex: 1;
+}
+
+
+.story-text h2 {
+    color: #d4af37;
+    font-size: 35px;
+}
+
+
+.story-text p {
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+
+
+/* Değer kartları */
+
+.values {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+
+.values h2 {
+    color:#d4af37;
+    font-size:35px;
+}
+
+
+.value-container {
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:40px;
+}
+
+
+.value-card {
+
+    background:#1c1b12;
+    padding:30px;
+    border-radius:20px;
+    flex:1;
+    border:1px solid #d4af37;
+
+}
+
+
+.value-card h3 {
+    color:#d4af37;
+}
+
+
+.value-card p {
+    line-height:1.6;
+}
+
+
+
+/* Kurucu bölümü */
+
+.founder {
+
+    text-align:center;
+    padding:80px 10%;
+    background:#151207;
+
+}
+
+
+.founder h2 {
+    color:#d4af37;
+}
+
+
+.founder h3 {
+    font-size:32px;
+}
+
+
+.founder p {
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+
+
+/* Mobil görünüm */
+
+@media(max-width:768px){
+
+
+.story {
+
+    flex-direction:column;
+    padding:50px 20px;
+
+}
+
+
+.about-overlay h1 {
+
+    font-size:32px;
+
+}
+
+
+.about-overlay p {
+
+    font-size:17px;
+
+}
+
+
+.value-container {
+
+    flex-direction:column;
+
+}
+
+
+.story-text h2 {
+
+    font-size:28px;
+
+}
+
+
+}
