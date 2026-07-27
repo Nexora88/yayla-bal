@@ -1,1 +1,1473 @@
+/* ===================================
+   SAROS DOĞAL YAYLA BALI
+   STYLE CSS - BÖLÜM 1
+   TEMEL SİSTEM
+=================================== */
 
+
+/* Genel sıfırlama */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Renk sistemi */
+
+:root {
+
+    --yesil: #1f4d3b;
+    --koyu-yesil: #123126;
+
+    --altin: #d4a72c;
+
+    --krem: #f8f1df;
+
+    --toprak: #8b5e34;
+
+    --beyaz: #ffffff;
+
+    --siyah: #1a1a1a;
+
+    --gri: #666666;
+
+}
+
+
+/* Genel gövde */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--krem);
+
+    color: var(--siyah);
+
+    line-height: 1.6;
+
+}
+
+
+/* Sayfa genişliği */
+
+.container {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+
+
+/* Başlıklar */
+
+h1,
+h2,
+h3,
+h4 {
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+}
+
+
+h1 {
+
+    font-size: 48px;
+
+}
+
+
+h2 {
+
+    font-size: 36px;
+
+}
+
+
+h3 {
+
+    font-size: 24px;
+
+}
+
+
+
+/* Paragraflar */
+
+p {
+
+    font-size: 17px;
+
+    color: #333;
+
+}
+
+
+
+/* Linkler */
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+
+
+/* Buton sistemi */
+
+.btn {
+
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    border-radius: 30px;
+
+    background: var(--altin);
+
+    color: var(--siyah);
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+
+
+.btn:hover {
+
+    background: var(--toprak);
+
+    color: var(--beyaz);
+
+}
+
+
+
+/* Resimler */
+
+img {
+
+    max-width: 100%;
+
+    display: block;
+
+}
+
+
+
+/* Bölüm boşlukları */
+
+.section {
+
+    padding: 80px 0;
+
+}
+
+/* ===================================
+   STYLE CSS - BÖLÜM 2
+   HEADER / MENÜ / LOGO
+=================================== */
+
+
+/* Header */
+
+header {
+
+    width:100%;
+
+    position:relative;
+
+    z-index:1000;
+
+    background:var(--beyaz);
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+}
+
+
+
+/* Header iç alan */
+
+.header-container {
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:18px 0;
+
+}
+
+
+
+
+
+/* Logo */
+
+.logo img {
+
+    width:150px;
+
+    height:auto;
+
+}
+
+
+
+
+
+.logo {
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+
+
+
+/* Menü */
+
+nav ul {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    list-style:none;
+
+}
+
+
+
+
+
+nav ul li a {
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:var(--yesil);
+
+    transition:.3s;
+
+}
+
+
+
+
+
+nav ul li a:hover {
+
+    color:var(--altin);
+
+}
+
+
+
+
+
+/* Aktif sayfa */
+
+nav ul li .active {
+
+    color:var(--altin);
+
+}
+
+
+
+
+
+/* Menü butonu */
+
+.menu-btn {
+
+    display:none;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    color:var(--yesil);
+
+}
+
+
+
+
+
+
+/* Mobil */
+
+@media(max-width:768px){
+
+
+.header-container {
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+
+nav ul {
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+.logo img {
+
+    width:120px;
+
+}
+
+
+}
+
+/* ===================================
+   STYLE CSS - BÖLÜM 3
+   ANA SAYFA TASARIMI
+=================================== */
+
+
+/* HERO ALANI */
+
+.hero {
+
+    min-height:90vh;
+
+    background:
+
+    linear-gradient(
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.45)
+    ),
+
+    url("../assets/images/hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+
+
+
+
+.hero-content {
+
+    max-width:850px;
+
+    padding:20px;
+
+}
+
+
+
+
+
+.hero h1 {
+
+    font-size:60px;
+
+    color:white;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+.hero h1 span {
+
+    color:var(--altin);
+
+}
+
+
+
+
+
+.hero p {
+
+    color:white;
+
+    font-size:22px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+
+
+.hero-buttons {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+
+
+
+/* İKİNCİ BUTON */
+
+.btn-outline {
+
+    background:transparent;
+
+    border:2px solid white;
+
+    color:white;
+
+}
+
+
+
+.btn-outline:hover {
+
+    background:white;
+
+    color:var(--yesil);
+
+}
+
+
+
+
+
+/* BÖLÜM BAŞLIKLARI */
+
+
+.section-title {
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+
+
+.section-title h2 {
+
+    color:var(--yesil);
+
+    margin-bottom:15px;
+
+}
+
+
+
+.section-title p {
+
+    color:var(--gri);
+
+}
+
+
+
+
+
+
+
+/* HİKAYE ALANI */
+
+
+.story {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:50px;
+
+}
+
+
+
+.story-image {
+
+    flex:1;
+
+}
+
+
+
+.story-image img {
+
+    border-radius:25px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+
+}
+
+
+
+.story-content {
+
+    flex:1;
+
+}
+
+
+
+.story-content h2 {
+
+    color:var(--yesil);
+
+    margin-bottom:20px;
+
+}
+
+
+
+.story-content p {
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+
+/* ÜRÜN ÖNİZLEME */
+
+.products-preview {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+
+
+.product-card {
+
+    background:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+
+    transition:.3s;
+
+}
+
+
+
+
+
+.product-card:hover {
+
+    transform:translateY(-8px);
+
+}
+
+
+
+
+
+.product-card img {
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+.product-card-content {
+
+    padding:25px;
+
+}
+
+
+
+.product-card h3 {
+
+    color:var(--yesil);
+
+    margin-bottom:10px;
+
+}
+
+
+
+.product-card p {
+
+    color:var(--gri);
+
+}
+
+
+
+
+
+
+/* MOBİL */
+
+@media(max-width:900px){
+
+
+.hero h1 {
+
+    font-size:40px;
+
+}
+
+
+
+.hero p {
+
+    font-size:18px;
+
+}
+
+
+
+.story {
+
+    flex-direction:column;
+
+}
+
+
+
+.products-preview {
+
+    grid-template-columns:1fr;
+
+}
+
+
+}
+
+/* ===================================
+   STYLE CSS - BÖLÜM 4
+   DİĞER SAYFALAR
+=================================== */
+
+
+/* SAYFA ÜST BAŞLIK */
+
+.page-header {
+
+    background:
+
+    linear-gradient(
+    rgba(31,77,59,0.75),
+    rgba(31,77,59,0.75)
+    ),
+
+    url("../assets/images/yayla.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    padding:120px 20px;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+
+
+.page-header h1 {
+
+    font-size:50px;
+
+    color:white;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.page-header p {
+
+    color:white;
+
+    font-size:20px;
+
+}
+
+
+
+
+
+
+/* =========================
+   ÜRÜNLER SAYFASI
+========================= */
+
+
+.products-page {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.product-detail-card {
+
+    background:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+
+
+.product-detail-card img {
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+}
+
+
+
+.product-info {
+
+    padding:25px;
+
+}
+
+
+
+.product-info h2 {
+
+    color:var(--yesil);
+
+}
+
+
+
+.product-price {
+
+    display:block;
+
+    font-size:28px;
+
+    color:var(--altin);
+
+    font-weight:bold;
+
+    margin:15px 0;
+
+}
+
+
+
+.stock {
+
+    display:inline-block;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    background:#e6f2ea;
+
+    color:var(--yesil);
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+
+/* =========================
+   HAKKIMIZDA
+========================= */
+
+
+.about-section {
+
+    display:flex;
+
+    gap:50px;
+
+    align-items:center;
+
+}
+
+
+
+.about-section img {
+
+    width:100%;
+
+    border-radius:25px;
+
+}
+
+
+
+.about-text h2 {
+
+    color:var(--yesil);
+
+}
+
+
+
+.about-text p {
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+/* Değer kartları */
+
+
+.values {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.value-card {
+
+    background:white;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+
+}
+
+
+
+.value-card h3 {
+
+    color:var(--altin);
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   GALERİ
+========================= */
+
+
+.gallery-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.gallery-item {
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+}
+
+
+
+.gallery-item img {
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    transition:.3s;
+
+}
+
+
+
+.gallery-item img:hover {
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+
+
+
+/* =========================
+   İLETİŞİM
+========================= */
+
+
+.contact-box {
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+
+
+.contact-box h2 {
+
+    color:var(--yesil);
+
+}
+
+
+
+.contact-item {
+
+    margin:20px 0;
+
+    font-size:18px;
+
+}
+
+
+
+
+
+.whatsapp-btn {
+
+    background:#25D366;
+
+    color:white;
+
+}
+
+
+
+.whatsapp-btn:hover {
+
+    background:#1da851;
+
+}
+
+
+
+
+
+
+
+/* MOBİL */
+
+@media(max-width:900px){
+
+
+.products-page,
+
+.values,
+
+.gallery-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.about-section {
+
+    flex-direction:column;
+
+}
+
+
+
+.page-header h1 {
+
+    font-size:38px;
+
+}
+
+
+  }
+
+/* ===================================
+   STYLE CSS - BÖLÜM 5
+   HESAP / SEPET / SİPARİŞ / ADMİN
+=================================== */
+
+
+/* =========================
+   FORM SİSTEMİ
+========================= */
+
+
+.form-container {
+
+    max-width:500px;
+
+    margin:60px auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+
+
+.form-container h1 {
+
+    text-align:center;
+
+    color:var(--yesil);
+
+    margin-bottom:30px;
+
+}
+
+
+
+.form-group {
+
+    margin-bottom:20px;
+
+}
+
+
+
+.form-group label {
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:bold;
+
+}
+
+
+
+.form-group input {
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    border:1px solid #ddd;
+
+    font-size:16px;
+
+}
+
+
+
+.form-group input:focus {
+
+    outline:none;
+
+    border-color:var(--altin);
+
+}
+
+
+
+
+
+
+/* =========================
+   PROFİL
+========================= */
+
+
+.profile-card {
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+
+
+.profile-card h2 {
+
+    color:var(--yesil);
+
+}
+
+
+
+
+
+
+
+/* =========================
+   SEPET
+========================= */
+
+
+.cart-container {
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+
+
+.cart-item {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-bottom:1px solid #eee;
+
+    padding:20px 0;
+
+}
+
+
+
+.cart-item img {
+
+    width:90px;
+
+    height:90px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+}
+
+
+
+.cart-total {
+
+    text-align:right;
+
+    font-size:28px;
+
+    color:var(--altin);
+
+    font-weight:bold;
+
+    margin-top:25px;
+
+}
+
+
+
+
+
+
+/* =========================
+   SİPARİŞLER
+========================= */
+
+
+.order-card {
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.1);
+
+}
+
+
+
+.order-status {
+
+    display:inline-block;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    background:#e6f2ea;
+
+    color:var(--yesil);
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   BİLDİRİM ALANI
+========================= */
+
+
+.notification-box {
+
+    background:var(--yesil);
+
+    color:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+}
+
+
+
+.notification-box h2 {
+
+    color:white;
+
+}
+
+
+
+.notification-box p {
+
+    color:white;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   ADMİN PANEL
+========================= */
+
+
+.admin-panel {
+
+    display:grid;
+
+    grid-template-columns:250px 1fr;
+
+    gap:30px;
+
+}
+
+
+
+.admin-sidebar {
+
+    background:var(--koyu-yesil);
+
+    color:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+}
+
+
+
+.admin-sidebar h3 {
+
+    color:var(--altin);
+
+}
+
+
+
+.admin-content {
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+}
+
+
+
+
+
+.dashboard-card {
+
+    background:var(--krem);
+
+    padding:25px;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+/* MOBİL */
+
+@media(max-width:900px){
+
+
+.cart-item {
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+.admin-panel {
+
+    grid-template-columns:1fr;
+
+}
+
+
+      }
