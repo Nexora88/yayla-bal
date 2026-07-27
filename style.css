@@ -1578,3 +1578,62 @@ nav ul {
 
 
 }
+
+.gallery-header {
+    text-align:center;
+    padding:70px 20px;
+}
+
+
+.gallery-header h1 {
+    color:#d4a017;
+    font-size:42px;
+}
+
+
+.gallery-header p {
+    font-size:20px;
+}
+
+
+.gallery-grid {
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    padding-bottom:70px;
+}
+
+
+.gallery-card {
+    background:#17170f;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    transition:0.3s;
+}
+
+
+.gallery-card:hover {
+    transform:translateY(-8px);
+}
+
+
+.gallery-card img {
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+
+.gallery-card h3 {
+    color:#d4a017;
+    padding:15px;
+    font-size:25px;
+}
+
+
+.gallery-card p {
+    padding:0 15px 20px;
+}
