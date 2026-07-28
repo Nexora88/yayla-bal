@@ -1,1 +1,426 @@
+<!DOCTYPE html>
+<html lang="tr">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepetim | Saros Doğal Yayla Balı</title>
+    <meta name="description" content="Saros Doğal Yayla Balı alışveriş sepeti.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cart-wrap {
+            padding: 50px 0 80px;
+        }
+
+        .cart-container {
+            background: var(--beyaz);
+            border-radius: var(--radius);
+            box-shadow: var(--golge);
+            padding: 36px 32px;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .cart-container h2 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .cart-sub {
+            color: var(--gri);
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .cart-empty p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            gap: 18px;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: var(--krem-koyu);
+        }
+
+        .cart-item-info h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--yesil);
+            margin-bottom: 4px;
+        }
+
+        .cart-item-info .meta {
+            font-size: 0.88rem;
+            color: var(--gri);
+            margin-bottom: 8px;
+        }
+
+        .cart-item-info .price {
+            font-weight: 700;
+            color: var(--altin);
+            font-size: 1.05rem;
+        }
+
+        .cart-item-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .qty-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .qty-control button {
+            width: 32px;
+            height: 32px;
+            border: 1.5px solid #e0ddd4;
+            background: var(--gri-acik);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: var(--yesil);
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .qty-control button:hover {
+            background: #e6f2ea;
+            border-color: var(--yesil);
+        }
+
+        .qty-control span {
+            min-width: 28px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .btn-remove {
+            background: none;
+            border: none;
+            color: #a05050;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-weight: 600;
+            padding: 0;
+            font-family: inherit;
+        }
+
+        .btn-remove:hover {
+            color: #c03030;
+            text-decoration: underline;
+        }
+
+        .cart-summary {
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 2px solid #eee;
+        }
+
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .cart-total-row .label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--yesil);
+        }
+
+        .cart-total-row .amount {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--altin);
+        }
+
+        .cart-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cart-actions .btn {
+            padding: 13px 28px;
+            font-size: 0.95rem;
+        }
+
+        .btn-outline-dark {
+            background: transparent;
+            border: 2px solid var(--yesil);
+            color: var(--yesil);
+            box-shadow: none;
+        }
+
+        .btn-outline-dark:hover {
+            background: var(--yesil);
+            color: white;
+        }
+
+        .cart-note {
+            margin-top: 24px;
+            padding: 14px 16px;
+            background: #f8f5ec;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            color: #7a6e5a;
+            line-height: 1.55;
+        }
+
+        @media (max-width: 600px) {
+            .cart-item {
+                grid-template-columns: 64px 1fr;
+            }
+            .cart-item-actions {
+                grid-column: 1 / -1;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .cart-container {
+                padding: 28px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="Saros Doğal Yayla Balı">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="urunler.html">Ürünler</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="page-header">
+    <h1>Sepetim</h1>
+    <p>Seçtiğiniz ürünler</p>
+</section>
+
+<section class="cart-wrap">
+    <div class="container">
+        <div class="cart-container">
+            <h2>Alışveriş sepeti</h2>
+            <p class="cart-sub">Ürünler yalnızca tarayıcınızda tutulur; sunucuya gönderilmez.</p>
+
+            <div id="cartContent">
+                <!-- JS ile doldurulur -->
+            </div>
+
+            <p class="cart-note">
+                <strong>Bilgi:</strong> Online ödeme sistemi henüz aktif değildir.
+                Siparişinizi tamamlamak için İletişim sayfasından veya
+                WhatsApp kanalımız üzerinden bizimle iletişime geçiniz.
+                Sepet içeriği yalnızca sizin tarayıcınızda saklanır.
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-box">
+                <img src="assets/images/logo.png" alt="Saros Doğal Yayla Balı" style="width:130px;">
+                <p>
+                    Saros Doğal Yayla Balı,
+                    Edirne Keşan Yaylaköy'den
+                    doğal üretim anlayışıyla sizlere ulaşır.
+                </p>
+            </div>
+            <div class="footer-box">
+                <h3>Hızlı Bağlantılar</h3>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="urunler.html">Ürünler</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h3>İletişim</h3>
+                <p>📍 Edirne Keşan Yaylaköy</p>
+                <p>🐝 Kurucu: Ahmet Bakraç</p>
+                <p>🍯 Saros Doğal Yayla Balı</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Saros Doğal Yayla Balı. Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function () {
+    'use strict';
+
+    var STORAGE_KEY = 'saros_sepet';
+
+    function getCart() {
+        try {
+            var raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return [];
+            var data = JSON.parse(raw);
+            return Array.isArray(data) ? data : [];
+        } catch (e) {
+            return [];
+        }
+    }
+
+    function saveCart(cart) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+        } catch (e) {
+            /* depolama dolu veya engelli */
+        }
+    }
+
+    function formatPrice(n) {
+        return Number(n).toLocaleString('tr-TR') + ' ₺';
+    }
+
+    function updateQty(id, delta) {
+        var cart = getCart();
+        var item = cart.find(function (x) { return x.id === id; });
+        if (!item) return;
+        item.qty += delta;
+        if (item.qty < 1) {
+            cart = cart.filter(function (x) { return x.id !== id; });
+        }
+        saveCart(cart);
+        render();
+    }
+
+    function removeItem(id) {
+        var cart = getCart().filter(function (x) { return x.id !== id; });
+        saveCart(cart);
+        render();
+    }
+
+    function clearCart() {
+        if (!confirm('Sepeti temizlemek istediğinize emin misiniz?')) return;
+        saveCart([]);
+        render();
+    }
+
+    function render() {
+        var el = document.getElementById('cartContent');
+        if (!el) return;
+
+        var cart = getCart();
+
+        if (cart.length === 0) {
+            el.innerHTML =
+                '<div class="cart-empty">' +
+                '<p>Sepetiniz şu an boş.</p>' +
+                '<a href="urunler.html" class="btn">Ürünleri İncele</a>' +
+                '</div>';
+            return;
+        }
+
+        var total = 0;
+        var html = '';
+
+        cart.forEach(function (item) {
+            var line = item.price * item.qty;
+            total += line;
+            html +=
+                '<div class="cart-item">' +
+                '<img src="' + (item.img || 'assets/images/bal.jpg') + '" alt="' + item.name + '">' +
+                '<div class="cart-item-info">' +
+                '<h3>' + item.name + '</h3>' +
+                '<p class="meta">' + (item.net || '') + '</p>' +
+                '<p class="price">' + formatPrice(item.price) + '</p>' +
+                '</div>' +
+                '<div class="cart-item-actions">' +
+                '<div class="qty-control">' +
+                '<button type="button" data-action="minus" data-id="' + item.id + '" aria-label="Azalt">−</button>' +
+                '<span>' + item.qty + '</span>' +
+                '<button type="button" data-action="plus" data-id="' + item.id + '" aria-label="Artır">+</button>' +
+                '</div>' +
+                '<button type="button" class="btn-remove" data-action="remove" data-id="' + item.id + '">Kaldır</button>' +
+                '</div>' +
+                '</div>';
+        });
+
+        html +=
+            '<div class="cart-summary">' +
+            '<div class="cart-total-row">' +
+            '<span class="label">Toplam</span>' +
+            '<span class="amount">' + formatPrice(total) + '</span>' +
+            '</div>' +
+            '<div class="cart-actions">' +
+            '<a href="iletisim.html" class="btn">Sipariş için iletişime geç</a>' +
+            '<a href="urunler.html" class="btn btn-outline-dark">Alışverişe devam</a>' +
+            '<button type="button" class="btn btn-outline-dark" id="btnClear">Sepeti temizle</button>' +
+            '</div>' +
+            '</div>';
+
+        el.innerHTML = html;
+
+        el.querySelectorAll('[data-action]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var id = btn.getAttribute('data-id');
+                var action = btn.getAttribute('data-action');
+                if (action === 'plus') updateQty(id, 1);
+                if (action === 'minus') updateQty(id, -1);
+                if (action === 'remove') removeItem(id);
+            });
+        });
+
+        var clearBtn = document.getElementById('btnClear');
+        if (clearBtn) clearBtn.addEventListener('click', clearCart);
+    }
+
+    /* Test / demo: urunler sayfasından ekleme gelene kadar boş kalır.
+       Geliştirme için örnek ürün eklemek isterseniz tarayıcı konsolunda:
+       localStorage.setItem('saros_sepet', JSON.stringify([{
+         id:'suzme-850', name:'Süzme Çiçek Balı', net:'850 g', price:500, qty:1, img:'assets/images/bal.jpg'
+       }]));
+    */
+
+    render();
+})();
+</script>
+
+</body>
+</html>
