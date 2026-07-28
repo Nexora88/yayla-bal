@@ -1,1 +1,302 @@
+<!DOCTYPE html>
+<html lang="tr">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | Saros Doğal Yayla Balı</title>
+    <meta name="description" content="Saros Doğal Yayla Balı iletişim. Edirne Keşan Yaylaköy. Sipariş ve bilgi için bize ulaşın.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-card {
+            background: var(--beyaz);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+            box-shadow: var(--golge);
+        }
+
+        .contact-card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-card > .sub {
+            color: var(--gri);
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+        }
+
+        .contact-row {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            margin-bottom: 22px;
+            padding-bottom: 22px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact-row:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: #e6f2ea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-row h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--yesil);
+            margin-bottom: 4px;
+        }
+
+        .contact-row p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: var(--gri);
+        }
+
+        .whatsapp-box {
+            background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+            color: white;
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.25);
+        }
+
+        .whatsapp-box h2 {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .whatsapp-box p {
+            color: rgba(255,255,255,0.92);
+            margin-bottom: 14px;
+            font-size: 0.98rem;
+        }
+
+        .whatsapp-box ul {
+            list-style: none;
+            margin: 18px 0 28px;
+            padding: 0;
+        }
+
+        .whatsapp-box ul li {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+            padding: 6px 0;
+            padding-left: 22px;
+            position: relative;
+        }
+
+        .whatsapp-box ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        .whatsapp-box .btn {
+            background: white;
+            color: #128C7E;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            font-weight: 700;
+        }
+
+        .whatsapp-box .btn:hover {
+            background: #f0fff4;
+            color: #0d6e5f;
+            transform: translateY(-2px);
+        }
+
+        .map-note {
+            margin-top: 40px;
+            background: var(--beyaz);
+            border-radius: var(--radius);
+            padding: 28px 32px;
+            box-shadow: var(--golge);
+            text-align: center;
+        }
+
+        .map-note h2 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .map-note p {
+            max-width: 520px;
+            margin: 0 auto 8px;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 800px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="Saros Doğal Yayla Balı">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="urunler.html">Ürünler</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="iletisim.html" class="active">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="page-header">
+    <h1>İletişim</h1>
+    <p>Sipariş, stok ve üretim hakkında bize ulaşın</p>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <div class="contact-layout">
+
+            <div class="contact-card">
+                <h2>İletişim Bilgileri</h2>
+                <p class="sub">Saros Doğal Yayla Balı · Aile üretimi</p>
+
+                <div class="contact-row">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h3>Adres</h3>
+                        <p>Yaylaköy, Keşan / Edirne</p>
+                        <p>Türkiye</p>
+                    </div>
+                </div>
+
+                <div class="contact-row">
+                    <div class="contact-icon">🐝</div>
+                    <div>
+                        <h3>Üretici</h3>
+                        <p>Ahmet Bakraç</p>
+                        <p>Arıcılık İşletme No: 220000716718</p>
+                    </div>
+                </div>
+
+                <div class="contact-row">
+                    <div class="contact-icon">🍯</div>
+                    <div>
+                        <h3>Marka</h3>
+                        <p>Saros Doğal Yayla Balı</p>
+                        <p>Süzme çiçek balı ve arı ürünleri</p>
+                    </div>
+                </div>
+
+                <div class="contact-row">
+                    <div class="contact-icon">📦</div>
+                    <div>
+                        <h3>Sipariş</h3>
+                        <p>Sipariş ve stok sorularınız için</p>
+                        <p>WhatsApp kanalımızdan veya mesajla ulaşabilirsiniz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="whatsapp-box">
+                <h2>WhatsApp Kanalı</h2>
+                <p>
+                    Yeni hasat, stok durumu ve üretim sürecimizle ilgili
+                    güncel paylaşımlar için kanalımıza katılın.
+                </p>
+                <ul>
+                    <li>Yeni sezon ürün duyuruları</li>
+                    <li>Stok bilgileri</li>
+                    <li>Arılık ve üretim kareleri</li>
+                    <li>Doğrudan aileden bilgilendirme</li>
+                </ul>
+                <a href="https://whatsapp.com/channel/0029Vb8Gn8n002TFbr7MXw1a"
+                   target="_blank" rel="noopener"
+                   class="btn">
+                    Kanala Katıl
+                </a>
+            </div>
+
+        </div>
+
+        <div class="map-note">
+            <h2>Yaylaköy, Keşan / Edirne</h2>
+            <p>
+                Üretimimiz Edirne'nin Keşan ilçesine bağlı Yaylaköy'de
+                gerçekleştirilir. Ziyaret veya teslimat planı için
+                önceden iletişime geçmenizi rica ederiz.
+            </p>
+            <p style="margin-top: 16px;">
+                <a href="urunler.html" class="btn">Ürünleri İncele</a>
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-box">
+                <img src="assets/images/logo.png" alt="Saros Doğal Yayla Balı" style="width:130px;">
+                <p>
+                    Saros Doğal Yayla Balı,
+                    Edirne Keşan Yaylaköy'den
+                    doğal üretim anlayışıyla sizlere ulaşır.
+                </p>
+            </div>
+            <div class="footer-box">
+                <h3>Hızlı Bağlantılar</h3>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="urunler.html">Ürünler</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h3>İletişim</h3>
+                <p>📍 Edirne Keşan Yaylaköy</p>
+                <p>🐝 Kurucu: Ahmet Bakraç</p>
+                <p>🍯 Saros Doğal Yayla Balı</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Saros Doğal Yayla Balı. Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
