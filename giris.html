@@ -1,1 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş | Saros Doğal Yayla Balı</title>
+    <meta name="description" content="Saros Doğal Yayla Balı üye girişi.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .auth-wrap {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 420px;
+            background: var(--beyaz);
+            padding: 40px 36px;
+            border-radius: var(--radius);
+            box-shadow: var(--golge);
+        }
+
+        .form-container h1 {
+            text-align: center;
+            font-size: 1.75rem;
+            margin-bottom: 8px;
+        }
+
+        .form-container .sub {
+            text-align: center;
+            color: var(--gri);
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--yesil);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: var(--radius-sm);
+            border: 1.5px solid #e0ddd4;
+            font-size: 1rem;
+            font-family: inherit;
+            background: var(--gri-acik);
+            transition: var(--gecis);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--altin);
+            background: var(--beyaz);
+            box-shadow: 0 0 0 3px rgba(212, 167, 44, 0.2);
+        }
+
+        .form-container .btn {
+            width: 100%;
+            margin-top: 8px;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 0.95rem;
+            color: var(--gri);
+        }
+
+        .form-footer a {
+            color: var(--yesil);
+            font-weight: 600;
+        }
+
+        .form-footer a:hover {
+            color: var(--altin);
+        }
+
+        .form-note {
+            margin-top: 20px;
+            padding: 12px 14px;
+            background: #f8f5ec;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            color: #7a6e5a;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="Saros Doğal Yayla Balı">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="urunler.html">Ürünler</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="page-header">
+    <h1>Giriş Yap</h1>
+    <p>Hesabınıza giriş yapın</p>
+</section>
+
+<div class="auth-wrap">
+    <div class="form-container">
+        <h1>Hoş geldiniz</h1>
+        <p class="sub">Saros Doğal Yayla Balı üye girişi</p>
+
+        <form action="#" method="post" onsubmit="return handleLogin(event)">
+            <div class="form-group">
+                <label for="email">E-posta</label>
+                <input type="email" id="email" name="email" required placeholder="ornek@email.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+                <label for="sifre">Şifre</label>
+                <input type="password" id="sifre" name="sifre" required placeholder="Şifreniz" autocomplete="current-password" minlength="6">
+            </div>
+            <button type="submit" class="btn">Giriş Yap</button>
+        </form>
+
+        <div class="form-footer">
+            Hesabınız yok mu?
+            <a href="hesap-olustur.html">Hesap oluşturun</a>
+        </div>
+
+        <p class="form-note">
+            Bu alan ileride üyelik sistemiyle bağlanacaktır.
+            Şimdilik sipariş ve bilgi için
+            <a href="iletisim.html" style="color: var(--yesil); font-weight: 600;">İletişim</a>
+            sayfasını veya WhatsApp kanalımızı kullanabilirsiniz.
+        </p>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-box">
+                <img src="assets/images/logo.png" alt="Saros Doğal Yayla Balı" style="width:130px;">
+                <p>
+                    Saros Doğal Yayla Balı,
+                    Edirne Keşan Yaylaköy'den
+                    doğal üretim anlayışıyla sizlere ulaşır.
+                </p>
+            </div>
+            <div class="footer-box">
+                <h3>Hızlı Bağlantılar</h3>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="urunler.html">Ürünler</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h3>İletişim</h3>
+                <p>📍 Edirne Keşan Yaylaköy</p>
+                <p>🐝 Kurucu: Ahmet Bakraç</p>
+                <p>🍯 Saros Doğal Yayla Balı</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Saros Doğal Yayla Balı. Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+function handleLogin(e) {
+    e.preventDefault();
+    alert('Üyelik sistemi yakında aktif olacaktır.\nSipariş için İletişim sayfasını veya WhatsApp kanalımızı kullanabilirsiniz.');
+    return false;
+}
+</script>
+
+</body>
+</html>
