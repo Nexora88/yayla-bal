@@ -1,1 +1,300 @@
+<!DOCTYPE html>
+<html lang="tr">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesabım | Saros Doğal Yayla Balı</title>
+    <meta name="description" content="Saros Doğal Yayla Balı üye hesap sayfası.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .account-wrap {
+            padding: 60px 0 80px;
+        }
+
+        .account-grid {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .account-sidebar {
+            background: var(--beyaz);
+            border-radius: var(--radius);
+            box-shadow: var(--golge);
+            padding: 28px 22px;
+        }
+
+        .account-sidebar h2 {
+            font-size: 1.15rem;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .account-sidebar ul {
+            list-style: none;
+        }
+
+        .account-sidebar ul li {
+            margin-bottom: 6px;
+        }
+
+        .account-sidebar ul li a {
+            display: block;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--yesil);
+            transition: var(--gecis);
+        }
+
+        .account-sidebar ul li a:hover,
+        .account-sidebar ul li a.active {
+            background: #e6f2ea;
+            color: var(--koyu-yesil);
+        }
+
+        .account-main {
+            background: var(--beyaz);
+            border-radius: var(--radius);
+            box-shadow: var(--golge);
+            padding: 36px 32px;
+        }
+
+        .account-main h2 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .account-main .sub {
+            color: var(--gri);
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+        }
+
+        .status-box {
+            background: #f8f5ec;
+            border-left: 4px solid var(--altin);
+            border-radius: 0 12px 12px 0;
+            padding: 20px 22px;
+            margin-bottom: 28px;
+        }
+
+        .status-box h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--yesil);
+            margin-bottom: 8px;
+        }
+
+        .status-box p {
+            font-size: 0.92rem;
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        .info-list {
+            display: grid;
+            gap: 16px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-item .label {
+            font-weight: 600;
+            color: var(--yesil);
+            font-size: 0.9rem;
+        }
+
+        .info-item .value {
+            color: var(--gri);
+            font-size: 0.95rem;
+        }
+
+        .account-actions {
+            margin-top: 28px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .account-actions .btn {
+            padding: 12px 24px;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline-dark {
+            background: transparent;
+            border: 2px solid var(--yesil);
+            color: var(--yesil);
+            box-shadow: none;
+        }
+
+        .btn-outline-dark:hover {
+            background: var(--yesil);
+            color: white;
+        }
+
+        .security-note {
+            margin-top: 32px;
+            padding: 14px 16px;
+            background: #f0f4f1;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            color: #5a6b5e;
+            line-height: 1.55;
+        }
+
+        @media (max-width: 800px) {
+            .account-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="Saros Doğal Yayla Balı">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="urunler.html">Ürünler</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="page-header">
+    <h1>Hesabım</h1>
+    <p>Üye hesap özeti</p>
+</section>
+
+<section class="account-wrap">
+    <div class="container">
+        <div class="account-grid">
+
+            <aside class="account-sidebar">
+                <h2>Menü</h2>
+                <ul>
+                    <li><a href="hesap.html" class="active">Hesap özeti</a></li>
+                    <li><a href="sepet.html">Sepetim</a></li>
+                    <li><a href="urunler.html">Ürünler</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="giris.html">Giriş / Çıkış</a></li>
+                </ul>
+            </aside>
+
+            <div class="account-main">
+                <h2>Hesap özeti</h2>
+                <p class="sub">Saros Doğal Yayla Balı üyelik paneli</p>
+
+                <div class="status-box">
+                    <h3>Üyelik sistemi henüz aktif değil</h3>
+                    <p>
+                        Hesap bilgileriniz şu an sunucuda tutulmamaktadır.
+                        Üyelik altyapısı hazırlandığında giriş yaptıktan sonra
+                        bu sayfada ad, e-posta ve sipariş özetiniz görünecektir.
+                        Sipariş ve stok için İletişim sayfasını veya
+                        WhatsApp kanalımızı kullanabilirsiniz.
+                    </p>
+                </div>
+
+                <div class="info-list">
+                    <div class="info-item">
+                        <span class="label">Ad Soyad</span>
+                        <span class="value">—</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">E-posta</span>
+                        <span class="value">—</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Üyelik durumu</span>
+                        <span class="value">Pasif (sistem kurulumu bekleniyor)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Siparişler</span>
+                        <span class="value">Kayıtlı sipariş bulunmuyor</span>
+                    </div>
+                </div>
+
+                <div class="account-actions">
+                    <a href="urunler.html" class="btn">Ürünleri İncele</a>
+                    <a href="iletisim.html" class="btn btn-outline-dark">İletişime Geç</a>
+                    <a href="giris.html" class="btn btn-outline-dark">Giriş Sayfası</a>
+                </div>
+
+                <p class="security-note">
+                    🔒 Bu sayfada kişisel veri işlenmez ve saklanmaz.
+                    Şifre veya kimlik bilgisi tarayıcınıza ya da sunucuya yazılmaz.
+                    Site GitHub Pages üzerinden HTTPS ile sunulur.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-box">
+                <img src="assets/images/logo.png" alt="Saros Doğal Yayla Balı" style="width:130px;">
+                <p>
+                    Saros Doğal Yayla Balı,
+                    Edirne Keşan Yaylaköy'den
+                    doğal üretim anlayışıyla sizlere ulaşır.
+                </p>
+            </div>
+            <div class="footer-box">
+                <h3>Hızlı Bağlantılar</h3>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="urunler.html">Ürünler</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h3>İletişim</h3>
+                <p>📍 Edirne Keşan Yaylaköy</p>
+                <p>🐝 Kurucu: Ahmet Bakraç</p>
+                <p>🍯 Saros Doğal Yayla Balı</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Saros Doğal Yayla Balı. Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
