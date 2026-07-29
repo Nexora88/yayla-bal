@@ -10,9 +10,9 @@
     <style>
         .contact-layout {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: start;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 28px;
+            align-items: stretch;
         }
 
         .contact-card {
@@ -23,8 +23,8 @@
         }
 
         .contact-card h2 {
-            font-size: 1.4rem;
-            margin-bottom: 8px;
+            font-size: 1.35rem;
+            margin-bottom: 6px;
         }
 
         .contact-card > .sub {
@@ -35,76 +35,85 @@
 
         .contact-row {
             display: flex;
-            gap: 14px;
+            gap: 16px;
             align-items: flex-start;
-            margin-bottom: 22px;
-            padding-bottom: 22px;
-            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+            padding: 16px;
+            border-radius: 14px;
+            background: var(--gri-acik);
+            transition: var(--gecis);
+        }
+
+        .contact-row:hover {
+            background: #e6f2ea;
         }
 
         .contact-row:last-of-type {
-            border-bottom: none;
             margin-bottom: 0;
-            padding-bottom: 0;
         }
 
         .contact-icon {
-            width: 42px;
-            height: 42px;
+            width: 44px;
+            height: 44px;
             border-radius: 12px;
-            background: #e6f2ea;
+            background: var(--beyaz);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
 
         .contact-row h3 {
             font-family: 'DM Sans', sans-serif;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             font-weight: 700;
             color: var(--yesil);
             margin-bottom: 4px;
         }
 
         .contact-row p {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             margin: 0;
             color: var(--gri);
+            line-height: 1.5;
         }
 
         .whatsapp-box {
-            background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+            background: linear-gradient(145deg, #0e7a6c 0%, #25D366 100%);
             border-radius: var(--radius);
             padding: 36px 32px;
             color: white;
-            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.25);
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.28);
+            display: flex;
+            flex-direction: column;
         }
 
         .whatsapp-box h2 {
             color: white;
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             margin-bottom: 10px;
         }
 
-        .whatsapp-box p {
+        .whatsapp-box > p {
             color: rgba(255,255,255,0.92);
-            margin-bottom: 14px;
+            margin-bottom: 8px;
             font-size: 0.98rem;
+            flex: 1;
         }
 
         .whatsapp-box ul {
             list-style: none;
-            margin: 18px 0 28px;
+            margin: 16px 0 28px;
             padding: 0;
         }
 
         .whatsapp-box ul li {
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.92);
             font-size: 0.95rem;
-            padding: 6px 0;
-            padding-left: 22px;
+            padding: 7px 0;
+            padding-left: 24px;
             position: relative;
         }
 
@@ -120,6 +129,8 @@
             color: #128C7E;
             box-shadow: 0 4px 16px rgba(0,0,0,0.12);
             font-weight: 700;
+            text-align: center;
+            align-self: flex-start;
         }
 
         .whatsapp-box .btn:hover {
@@ -129,27 +140,67 @@
         }
 
         .map-note {
-            margin-top: 40px;
+            margin-top: 28px;
             background: var(--beyaz);
             border-radius: var(--radius);
-            padding: 28px 32px;
+            padding: 32px;
             box-shadow: var(--golge);
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 24px;
+            align-items: center;
         }
 
         .map-note h2 {
             font-size: 1.25rem;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .map-note p {
-            max-width: 520px;
-            margin: 0 auto 8px;
             font-size: 0.95rem;
+            margin: 0;
+            max-width: 480px;
+        }
+
+        .hours-strip {
+            margin-top: 28px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .hours-card {
+            background: var(--beyaz);
+            border-radius: var(--radius-sm);
+            padding: 20px 18px;
+            box-shadow: var(--golge);
+            text-align: center;
+        }
+
+        .hours-card strong {
+            display: block;
+            color: var(--yesil);
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        .hours-card span {
+            font-size: 0.88rem;
+            color: var(--gri);
         }
 
         @media (max-width: 800px) {
             .contact-layout {
+                grid-template-columns: 1fr;
+            }
+            .map-note {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .map-note p {
+                margin: 0 auto 16px;
+            }
+            .hours-strip {
                 grid-template-columns: 1fr;
             }
         }
@@ -171,7 +222,10 @@
                 <li><a href="hakkimizda.html">Hakkımızda</a></li>
                 <li><a href="urunler.html">Ürünler</a></li>
                 <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="bilgi.html">Bilgi</a></li>
                 <li><a href="iletisim.html" class="active">İletişim</a></li>
+                <li><a href="sepet.html">Sepet <span data-cart-count></span></a></li>
+                <li><a href="giris.html">Giriş</a></li>
             </ul>
         </nav>
     </div>
@@ -195,8 +249,7 @@
                     <div class="contact-icon">📍</div>
                     <div>
                         <h3>Adres</h3>
-                        <p>Yaylaköy, Keşan / Edirne</p>
-                        <p>Türkiye</p>
+                        <p>Yaylaköy, Keşan / Edirne<br>Türkiye</p>
                     </div>
                 </div>
 
@@ -204,8 +257,7 @@
                     <div class="contact-icon">🐝</div>
                     <div>
                         <h3>Üretici</h3>
-                        <p>Ahmet Bakraç</p>
-                        <p>Arıcılık İşletme No: 220000716718</p>
+                        <p>Ahmet Bakraç<br>Arıcılık İşletme No: 220000716718</p>
                     </div>
                 </div>
 
@@ -213,8 +265,7 @@
                     <div class="contact-icon">🍯</div>
                     <div>
                         <h3>Marka</h3>
-                        <p>Saros Doğal Yayla Balı</p>
-                        <p>Süzme çiçek balı ve arı ürünleri</p>
+                        <p>Saros Doğal Yayla Balı<br>Süzme çiçek balı ve arı ürünleri</p>
                     </div>
                 </div>
 
@@ -222,8 +273,12 @@
                     <div class="contact-icon">📦</div>
                     <div>
                         <h3>Sipariş</h3>
-                        <p>Sipariş ve stok sorularınız için</p>
-                        <p>WhatsApp kanalımızdan veya mesajla ulaşabilirsiniz.</p>
+                        <p>
+                            Online ödeme henüz aktif değildir.
+                            Sipariş ve stok için WhatsApp kanalı
+                            veya bu sayfadaki bilgiler üzerinden
+                            iletişime geçebilirsiniz.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -231,8 +286,8 @@
             <div class="whatsapp-box">
                 <h2>WhatsApp Kanalı</h2>
                 <p>
-                    Yeni hasat, stok durumu ve üretim sürecimizle ilgili
-                    güncel paylaşımlar için kanalımıza katılın.
+                    Yeni hasat, stok durumu ve üretim sürecimizle
+                    ilgili güncel paylaşımlar için kanalımıza katılın.
                 </p>
                 <ul>
                     <li>Yeni sezon ürün duyuruları</li>
@@ -249,16 +304,34 @@
 
         </div>
 
+        <div class="hours-strip">
+            <div class="hours-card">
+                <strong>📍 Konum</strong>
+                <span>Yaylaköy, Keşan</span>
+            </div>
+            <div class="hours-card">
+                <strong>🍯 Üretim</strong>
+                <span>Aile arılığı · 2020’den beri</span>
+            </div>
+            <div class="hours-card">
+                <strong>💬 Yanıt</strong>
+                <span>Mesajlarınıza en kısa sürede dönüş</span>
+            </div>
+        </div>
+
         <div class="map-note">
-            <h2>Yaylaköy, Keşan / Edirne</h2>
-            <p>
-                Üretimimiz Edirne'nin Keşan ilçesine bağlı Yaylaköy'de
-                gerçekleştirilir. Ziyaret veya teslimat planı için
-                önceden iletişime geçmenizi rica ederiz.
-            </p>
-            <p style="margin-top: 16px;">
+            <div>
+                <h2>Yaylaköy, Keşan / Edirne</h2>
+                <p>
+                    Üretimimiz Edirne'nin Keşan ilçesine bağlı
+                    Yaylaköy'de gerçekleştirilir. Ziyaret veya
+                    teslimat planı için önceden iletişime
+                    geçmenizi rica ederiz.
+                </p>
+            </div>
+            <div>
                 <a href="urunler.html" class="btn">Ürünleri İncele</a>
-            </p>
+            </div>
         </div>
 
     </div>
@@ -282,6 +355,7 @@
                     <li><a href="hakkimizda.html">Hakkımızda</a></li>
                     <li><a href="urunler.html">Ürünler</a></li>
                     <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="bilgi.html">Bilgi</a></li>
                     <li><a href="iletisim.html">İletişim</a></li>
                 </ul>
             </div>
@@ -294,9 +368,14 @@
         </div>
         <div class="footer-bottom">
             <p>© 2026 Saros Doğal Yayla Balı. Tüm hakları saklıdır.</p>
+            <p style="margin-top:8px; font-size:0.8rem; opacity:0.85;">
+                Bu site Ahmet Eymen Bakraç tarafından hazırlanmıştır.
+            </p>
         </div>
     </div>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
