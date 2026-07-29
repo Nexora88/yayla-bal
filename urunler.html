@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ürünler | Saros Doğal Yayla Balı</title>
-    <meta name="description" content="Saros Doğal Yayla Balı ürünleri. Edirne Keşan Yaylaköy'den süzme çiçek balı, petek bal, polen ve arı sütü. Doğal ve katkısız üretim.">
+    <meta name="description" content="Saros Doğal Yayla Balı ürünleri. Edirne Keşan Yaylaköy'den süzme çiçek balı, petek bal, polen ve arı sütü.">
     <link rel="stylesheet" href="style.css">
     <style>
         .products-page {
@@ -80,20 +80,9 @@
             margin-bottom: 14px;
         }
 
-        .stock-var {
-            background: #e6f2ea;
-            color: var(--yesil);
-        }
-
-        .stock-yok {
-            background: #f5f0e8;
-            color: #8b7355;
-        }
-
-        .stock-yakinda {
-            background: #fff3d6;
-            color: #9a7b1a;
-        }
+        .stock-var { background: #e6f2ea; color: var(--yesil); }
+        .stock-yok { background: #f5f0e8; color: #8b7355; }
+        .stock-yakinda { background: #fff3d6; color: #9a7b1a; }
 
         .product-net {
             font-size: 0.88rem;
@@ -119,18 +108,14 @@
             border-left: 4px solid var(--altin);
         }
 
-        .info-banner h2 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-        }
-
-        .info-banner p {
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
+        .info-banner h2 { font-size: 1.25rem; margin-bottom: 10px; }
+        .info-banner p { font-size: 0.95rem; margin-bottom: 0; }
 
         .product-actions {
             margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .product-actions .btn {
@@ -138,6 +123,9 @@
             text-align: center;
             padding: 12px 20px;
             font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
         }
 
         .btn-disabled {
@@ -146,6 +134,13 @@
             box-shadow: none !important;
             cursor: not-allowed;
             pointer-events: none;
+        }
+
+        .btn-outline-prod {
+            background: transparent !important;
+            border: 2px solid var(--yesil) !important;
+            color: var(--yesil) !important;
+            box-shadow: none !important;
         }
 
         @media (max-width: 600px) {
@@ -173,7 +168,10 @@
                 <li><a href="hakkimizda.html">Hakkımızda</a></li>
                 <li><a href="urunler.html" class="active">Ürünler</a></li>
                 <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="bilgi.html">Bilgi</a></li>
                 <li><a href="iletisim.html">İletişim</a></li>
+                <li><a href="sepet.html">Sepet <span data-cart-count></span></a></li>
+                <li><a href="giris.html">Giriş</a></li>
             </ul>
         </nav>
     </div>
@@ -200,8 +198,9 @@
 
         <div class="products-page">
 
+            <!-- SÜZME ÇİÇEK BALI -->
             <article class="product-detail-card">
-                <img src="assets/images/bal.jpg" alt="Saros Doğal Yayla Balı - Süzme Çiçek Balı 850 g">
+                <img src="assets/images/bal.png" alt="Saros Doğal Yayla Balı - Süzme Çiçek Balı 850 g">
                 <div class="product-info">
                     <h2>Süzme Çiçek Balı</h2>
                     <p class="product-meta">Saros Doğal Yayla Balı</p>
@@ -215,21 +214,18 @@
                         üretilir. Doğanın sunduğu en saf
                         lezzetlerden biridir.
                     </p>
-                    <div class="product-actions" style="display:flex; flex-direction:column; gap:10px;">
-    <button type="button" class="btn"
-        data-add-cart
-        data-id="suzme-850"
-        data-name="Süzme Çiçek Balı"
-        data-price="500"
-        data-net="850 g · 660 cc"
-        data-img="assets/images/bal.jpg">
-        Sepete Ekle
-    </button>
-    <a href="sepet.html" class="btn" style="background:transparent; border:2px solid var(--yesil); color:var(--yesil); box-shadow:none; text-align:center;">
-        Sepete Git
-    </a>
+                    <div class="product-actions">
+                        <button type="button" class="btn"
+                            data-add-cart
+                            data-id="suzme-850"
+                            data-name="Süzme Çiçek Balı"
+                            data-price="500"
+                            data-net="850 g · 660 cc"
+                            data-img="assets/images/bal.png">
+                            Sepete Ekle
+                        </button>
+                        <a href="sepet.html" class="btn btn-outline-prod">Sepete Git</a>
                     </div>
-                    
                     <p class="product-note">
                         Saklama: Serin, kuru ve güneş ışığından uzak
                         yerde muhafaza ediniz. Kristalleşme doğal bir
@@ -240,6 +236,7 @@
                 </div>
             </article>
 
+            <!-- PETEK BAL -->
             <article class="product-detail-card">
                 <img src="assets/images/petek.jpg" alt="Saros Doğal Yayla Balı - Petek Bal">
                 <div class="product-info">
@@ -251,8 +248,7 @@
                     <p>
                         Arıların doğal olarak ördüğü petek içinde
                         sunulan bal. Petek yapısı korunarak
-                        hazırlanır; geleneksel ve doğal bir
-                        tercih arayanlar için.
+                        hazırlanır; geleneksel bir tercih arayanlar için.
                     </p>
                     <div class="product-actions">
                         <span class="btn btn-disabled">Stokta yok</span>
@@ -265,8 +261,9 @@
                 </div>
             </article>
 
+            <!-- POLEN -->
             <article class="product-detail-card">
-                <img src="assets/images/polen.jpg" alt="Saros Doğal Yayla Balı - Doğal Polen">
+                <img src="assets/images/polen.png" alt="Saros Doğal Yayla Balı - Doğal Polen">
                 <div class="product-info">
                     <h2>Doğal Polen</h2>
                     <p class="product-meta">Saros Doğal Yayla Balı</p>
@@ -289,8 +286,9 @@
                 </div>
             </article>
 
+            <!-- ARI SÜTÜ -->
             <article class="product-detail-card">
-                <img src="assets/images/bal.jpg" alt="Saros Doğal Yayla Balı - Arı Sütü" style="opacity: 0.85; filter: saturate(0.7);">
+                <img src="assets/images/bal.png" alt="Saros Doğal Yayla Balı - Arı Sütü" style="opacity: 0.85; filter: saturate(0.7);">
                 <div class="product-info">
                     <h2>Arı Sütü</h2>
                     <p class="product-meta">Saros Doğal Yayla Balı</p>
@@ -318,11 +316,18 @@
         <div style="margin-top: 56px; max-width: 720px; margin-left: auto; margin-right: auto; text-align: center;">
             <p style="font-size: 0.95rem; color: var(--gri); margin-bottom: 24px;">
                 Sipariş ve stok sorularınız için bizimle iletişime geçin.
-                Yeni hasat ve ürün duyuruları WhatsApp kanalımızda paylaşılır.
+                Kristalleşme ve saklama hakkında
+                <a href="bilgi.html" style="color: var(--yesil); font-weight: 600;">Bilgi</a>
+                sayfasını inceleyebilirsiniz.
             </p>
             <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
                 <a href="iletisim.html" class="btn">İletişime Geç</a>
-                <a href="https://whatsapp.com/channel/0029Vb8Gn8n002TFbr7MXw1a" target="_blank" rel="noopener" class="btn" style="background: #25D366; color: white; box-shadow: 0 4px 14px rgba(37,211,102,0.35);">WhatsApp Kanalı</a>
+                <a href="https://whatsapp.com/channel/0029Vb8Gn8n002TFbr7MXw1a"
+                   target="_blank" rel="noopener"
+                   class="btn"
+                   style="background: #25D366; color: white; box-shadow: 0 4px 14px rgba(37,211,102,0.35);">
+                    WhatsApp Kanalı
+                </a>
             </div>
         </div>
 
@@ -347,6 +352,7 @@
                     <li><a href="hakkimizda.html">Hakkımızda</a></li>
                     <li><a href="urunler.html">Ürünler</a></li>
                     <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="bilgi.html">Bilgi</a></li>
                     <li><a href="iletisim.html">İletişim</a></li>
                 </ul>
             </div>
@@ -359,6 +365,9 @@
         </div>
         <div class="footer-bottom">
             <p>© 2026 Saros Doğal Yayla Balı. Tüm hakları saklıdır.</p>
+            <p style="margin-top:8px; font-size:0.8rem; opacity:0.85;">
+                Bu site Ahmet Eymen Bakraç tarafından hazırlanmıştır.
+            </p>
         </div>
     </div>
 </footer>
@@ -366,4 +375,4 @@
 <script src="script.js"></script>
 
 </body>
-  </html>
+</html>
