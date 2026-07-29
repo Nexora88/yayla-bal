@@ -9,9 +9,7 @@
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="style.css">
     <style>
-        .cart-wrap {
-            padding: 50px 0 80px;
-        }
+        .cart-wrap { padding: 50px 0 80px; }
 
         .cart-container {
             background: var(--beyaz);
@@ -104,6 +102,7 @@
             color: var(--yesil);
             font-weight: 700;
             line-height: 1;
+            font-family: inherit;
         }
 
         .qty-control button:hover {
@@ -168,6 +167,9 @@
         .cart-actions .btn {
             padding: 13px 28px;
             font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
         }
 
         .btn-outline-dark {
@@ -224,7 +226,10 @@
                 <li><a href="hakkimizda.html">Hakkımızda</a></li>
                 <li><a href="urunler.html">Ürünler</a></li>
                 <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="bilgi.html">Bilgi</a></li>
                 <li><a href="iletisim.html">İletişim</a></li>
+                <li><a href="sepet.html" class="active">Sepet <span data-cart-count></span></a></li>
+                <li><a href="giris.html">Giriş</a></li>
             </ul>
         </nav>
     </div>
@@ -241,9 +246,7 @@
             <h2>Alışveriş sepeti</h2>
             <p class="cart-sub">Ürünler yalnızca tarayıcınızda tutulur; sunucuya gönderilmez.</p>
 
-            <div id="cartContent">
-                <!-- JS ile doldurulur -->
-            </div>
+            <div id="cartContent"></div>
 
             <p class="cart-note">
                 <strong>Bilgi:</strong> Online ödeme sistemi henüz aktif değildir.
@@ -273,6 +276,7 @@
                     <li><a href="hakkimizda.html">Hakkımızda</a></li>
                     <li><a href="urunler.html">Ürünler</a></li>
                     <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="bilgi.html">Bilgi</a></li>
                     <li><a href="iletisim.html">İletişim</a></li>
                 </ul>
             </div>
@@ -285,68 +289,24 @@
         </div>
         <div class="footer-bottom">
             <p>© 2026 Saros Doğal Yayla Balı. Tüm hakları saklıdır.</p>
+            <p style="margin-top:8px; font-size:0.8rem; opacity:0.85;">
+                Bu site Ahmet Eymen Bakraç tarafından hazırlanmıştır.
+            </p>
         </div>
     </div>
 </footer>
 
+<script src="script.js"></script>
 <script>
 (function () {
     'use strict';
 
-    var STORAGE_KEY = 'saros_sepet';
-
-    function getCart() {
-        try {
-            var raw = localStorage.getItem(STORAGE_KEY);
-            if (!raw) return [];
-            var data = JSON.parse(raw);
-            return Array.isArray(data) ? data : [];
-        } catch (e) {
-            return [];
-        }
-    }
-
-    function saveCart(cart) {
-        try {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
-        } catch (e) {
-            /* depolama dolu veya engelli */
-        }
-    }
-
-    function formatPrice(n) {
-        return Number(n).toLocaleString('tr-TR') + ' ₺';
-    }
-
-    function updateQty(id, delta) {
-        var cart = getCart();
-        var item = cart.find(function (x) { return x.id === id; });
-        if (!item) return;
-        item.qty += delta;
-        if (item.qty < 1) {
-            cart = cart.filter(function (x) { return x.id !== id; });
-        }
-        saveCart(cart);
-        render();
-    }
-
-    function removeItem(id) {
-        var cart = getCart().filter(function (x) { return x.id !== id; });
-        saveCart(cart);
-        render();
-    }
-
-    function clearCart() {
-        if (!confirm('Sepeti temizlemek istediğinize emin misiniz?')) return;
-        saveCart([]);
-        render();
-    }
-
     function render() {
         var el = document.getElementById('cartContent');
-        if (!el) return;
+        if (!el || !window.SarosCart) return;
 
-        var cart = getCart();
+        var cart = SarosCart.getCart();
+        var formatPrice = SarosCart.formatPrice;
 
         if (cart.length === 0) {
             el.innerHTML =
@@ -361,11 +321,10 @@
         var html = '';
 
         cart.forEach(function (item) {
-            var line = item.price * item.qty;
-            total += line;
+            total += item.price * item.qty;
             html +=
                 '<div class="cart-item">' +
-                '<img src="' + (item.img || 'assets/images/bal.jpg') + '" alt="' + item.name + '">' +
+                '<img src="' + (item.img || 'assets/images/bal.png') + '" alt="">' +
                 '<div class="cart-item-info">' +
                 '<h3>' + item.name + '</h3>' +
                 '<p class="meta">' + (item.net || '') + '</p>' +
@@ -401,24 +360,25 @@
             btn.addEventListener('click', function () {
                 var id = btn.getAttribute('data-id');
                 var action = btn.getAttribute('data-action');
-                if (action === 'plus') updateQty(id, 1);
-                if (action === 'minus') updateQty(id, -1);
-                if (action === 'remove') removeItem(id);
+                if (action === 'plus') SarosCart.changeQty(id, 1);
+                if (action === 'minus') SarosCart.changeQty(id, -1);
+                if (action === 'remove') SarosCart.removeFromCart(id);
+                render();
             });
         });
 
         var clearBtn = document.getElementById('btnClear');
-        if (clearBtn) clearBtn.addEventListener('click', clearCart);
+        if (clearBtn) {
+            clearBtn.addEventListener('click', function () {
+                if (confirm('Sepeti temizlemek istediğinize emin misiniz?')) {
+                    SarosCart.clearCart();
+                    render();
+                }
+            });
+        }
     }
 
-    /* Test / demo: urunler sayfasından ekleme gelene kadar boş kalır.
-       Geliştirme için örnek ürün eklemek isterseniz tarayıcı konsolunda:
-       localStorage.setItem('saros_sepet', JSON.stringify([{
-         id:'suzme-850', name:'Süzme Çiçek Balı', net:'850 g', price:500, qty:1, img:'assets/images/bal.jpg'
-       }]));
-    */
-
-    render();
+    document.addEventListener('DOMContentLoaded', render);
 })();
 </script>
 
