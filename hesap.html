@@ -9,9 +9,7 @@
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="style.css">
     <style>
-        .account-wrap {
-            padding: 60px 0 80px;
-        }
+        .account-wrap { padding: 60px 0 80px; }
 
         .account-grid {
             display: grid;
@@ -34,28 +32,32 @@
             border-bottom: 1px solid #eee;
         }
 
-        .account-sidebar ul {
-            list-style: none;
-        }
+        .account-sidebar ul { list-style: none; }
 
-        .account-sidebar ul li {
-            margin-bottom: 6px;
-        }
+        .account-sidebar ul li { margin-bottom: 6px; }
 
-        .account-sidebar ul li a {
+        .account-sidebar ul li a,
+        .account-sidebar ul li button {
             display: block;
+            width: 100%;
+            text-align: left;
             padding: 10px 14px;
             border-radius: 10px;
             font-size: 0.95rem;
             font-weight: 600;
             color: var(--yesil);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
             transition: var(--gecis);
         }
 
         .account-sidebar ul li a:hover,
-        .account-sidebar ul li a.active {
+        .account-sidebar ul li a.active,
+        .account-sidebar ul li button:hover {
             background: #e6f2ea;
-            color: var(--koyu-yesil);
+            color: var(--koyu-yesil, #1f4d3b);
         }
 
         .account-main {
@@ -76,32 +78,7 @@
             margin-bottom: 28px;
         }
 
-        .status-box {
-            background: #f8f5ec;
-            border-left: 4px solid var(--altin);
-            border-radius: 0 12px 12px 0;
-            padding: 20px 22px;
-            margin-bottom: 28px;
-        }
-
-        .status-box h3 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--yesil);
-            margin-bottom: 8px;
-        }
-
-        .status-box p {
-            font-size: 0.92rem;
-            margin: 0;
-            line-height: 1.55;
-        }
-
-        .info-list {
-            display: grid;
-            gap: 16px;
-        }
+        .info-list { display: grid; gap: 4px; }
 
         .info-item {
             display: flex;
@@ -113,9 +90,7 @@
             flex-wrap: wrap;
         }
 
-        .info-item:last-child {
-            border-bottom: none;
-        }
+        .info-item:last-child { border-bottom: none; }
 
         .info-item .label {
             font-weight: 600;
@@ -138,6 +113,9 @@
         .account-actions .btn {
             padding: 12px 24px;
             font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
         }
 
         .btn-outline-dark {
@@ -152,8 +130,26 @@
             color: white;
         }
 
+        .btn-danger {
+            background: transparent;
+            border: 2px solid #a05050;
+            color: #a05050;
+            box-shadow: none;
+        }
+
+        .btn-danger:hover {
+            background: #a05050;
+            color: white;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--gri);
+        }
+
         .security-note {
-            margin-top: 32px;
+            margin-top: 28px;
             padding: 14px 16px;
             background: #f0f4f1;
             border-radius: 10px;
@@ -163,9 +159,7 @@
         }
 
         @media (max-width: 800px) {
-            .account-grid {
-                grid-template-columns: 1fr;
-            }
+            .account-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -185,7 +179,10 @@
                 <li><a href="hakkimizda.html">Hakkımızda</a></li>
                 <li><a href="urunler.html">Ürünler</a></li>
                 <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="bilgi.html">Bilgi</a></li>
                 <li><a href="iletisim.html">İletişim</a></li>
+                <li><a href="sepet.html">Sepet <span data-cart-count></span></a></li>
+                <li><a href="hesap.html" class="active">Hesabım</a></li>
             </ul>
         </nav>
     </div>
@@ -198,67 +195,7 @@
 
 <section class="account-wrap">
     <div class="container">
-        <div class="account-grid">
-
-            <aside class="account-sidebar">
-                <h2>Menü</h2>
-                <ul>
-                    <li><a href="hesap.html" class="active">Hesap özeti</a></li>
-                    <li><a href="sepet.html">Sepetim</a></li>
-                    <li><a href="urunler.html">Ürünler</a></li>
-                    <li><a href="iletisim.html">İletişim</a></li>
-                    <li><a href="giris.html">Giriş / Çıkış</a></li>
-                </ul>
-            </aside>
-
-            <div class="account-main">
-                <h2>Hesap özeti</h2>
-                <p class="sub">Saros Doğal Yayla Balı üyelik paneli</p>
-
-                <div class="status-box">
-                    <h3>Üyelik sistemi henüz aktif değil</h3>
-                    <p>
-                        Hesap bilgileriniz şu an sunucuda tutulmamaktadır.
-                        Üyelik altyapısı hazırlandığında giriş yaptıktan sonra
-                        bu sayfada ad, e-posta ve sipariş özetiniz görünecektir.
-                        Sipariş ve stok için İletişim sayfasını veya
-                        WhatsApp kanalımızı kullanabilirsiniz.
-                    </p>
-                </div>
-
-                <div class="info-list">
-                    <div class="info-item">
-                        <span class="label">Ad Soyad</span>
-                        <span class="value">—</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="label">E-posta</span>
-                        <span class="value">—</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="label">Üyelik durumu</span>
-                        <span class="value">Pasif (sistem kurulumu bekleniyor)</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="label">Siparişler</span>
-                        <span class="value">Kayıtlı sipariş bulunmuyor</span>
-                    </div>
-                </div>
-
-                <div class="account-actions">
-                    <a href="urunler.html" class="btn">Ürünleri İncele</a>
-                    <a href="iletisim.html" class="btn btn-outline-dark">İletişime Geç</a>
-                    <a href="giris.html" class="btn btn-outline-dark">Giriş Sayfası</a>
-                </div>
-
-                <p class="security-note">
-                    🔒 Bu sayfada kişisel veri işlenmez ve saklanmaz.
-                    Şifre veya kimlik bilgisi tarayıcınıza ya da sunucuya yazılmaz.
-                    Site GitHub Pages üzerinden HTTPS ile sunulur.
-                </p>
-            </div>
-
-        </div>
+        <div id="accountRoot" class="loading">Oturum kontrol ediliyor...</div>
     </div>
 </section>
 
@@ -277,9 +214,8 @@
                 <h3>Hızlı Bağlantılar</h3>
                 <ul>
                     <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
                     <li><a href="urunler.html">Ürünler</a></li>
-                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="bilgi.html">Bilgi</a></li>
                     <li><a href="iletisim.html">İletişim</a></li>
                 </ul>
             </div>
@@ -292,9 +228,97 @@
         </div>
         <div class="footer-bottom">
             <p>© 2026 Saros Doğal Yayla Balı. Tüm hakları saklıdır.</p>
+            <p style="margin-top:8px; font-size:0.8rem; opacity:0.85;">
+                Bu site Ahmet Eymen Bakraç tarafından hazırlanmıştır.
+            </p>
         </div>
     </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+<script>
+(function () {
+    'use strict';
+
+    var SUPABASE_URL = 'https://xodozoflwoxglxqjlilx.supabase.co';
+    var SUPABASE_ANON_KEY = 'sb_publishable_LHWNEkyFebxKF_YNYANhug_uF6tmdBP';
+
+    var supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    var root = document.getElementById('accountRoot');
+
+    function escapeHtml(str) {
+        if (!str) return '—';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    async function logout() {
+        await supabase.auth.signOut();
+        window.location.href = 'giris.html';
+    }
+
+    function render(user) {
+        var meta = user.user_metadata || {};
+        var name = meta.full_name || '—';
+        var email = user.email || '—';
+        var created = user.created_at
+            ? new Date(user.created_at).toLocaleDateString('tr-TR')
+            : '—';
+
+        root.innerHTML =
+            '<div class="account-grid">' +
+            '<aside class="account-sidebar">' +
+            '<h2>Menü</h2>' +
+            '<ul>' +
+            '<li><a href="hesap.html" class="active">Hesap özeti</a></li>' +
+            '<li><a href="sepet.html">Sepetim</a></li>' +
+            '<li><a href="urunler.html">Ürünler</a></li>' +
+            '<li><a href="iletisim.html">İletişim</a></li>' +
+            '<li><button type="button" id="btnCikis">Çıkış yap</button></li>' +
+            '</ul>' +
+            '</aside>' +
+            '<div class="account-main">' +
+            '<h2>Hesap özeti</h2>' +
+            '<p class="sub">Saros Doğal Yayla Balı üyelik paneli</p>' +
+            '<div class="info-list">' +
+            '<div class="info-item"><span class="label">Ad Soyad</span><span class="value">' + escapeHtml(name) + '</span></div>' +
+            '<div class="info-item"><span class="label">E-posta</span><span class="value">' + escapeHtml(email) + '</span></div>' +
+            '<div class="info-item"><span class="label">Üyelik durumu</span><span class="value">Aktif</span></div>' +
+            '<div class="info-item"><span class="label">Kayıt tarihi</span><span class="value">' + escapeHtml(created) + '</span></div>' +
+            '<div class="info-item"><span class="label">Siparişler</span><span class="value">Online ödeme henüz aktif değil</span></div>' +
+            '</div>' +
+            '<div class="account-actions">' +
+            '<a href="urunler.html" class="btn">Ürünleri İncele</a>' +
+            '<a href="sepet.html" class="btn btn-outline-dark">Sepetime Git</a>' +
+            '<a href="iletisim.html" class="btn btn-outline-dark">İletişim</a>' +
+            '<button type="button" class="btn btn-danger" id="btnCikis2">Çıkış Yap</button>' +
+            '</div>' +
+            '<p class="security-note">' +
+            '🔒 Oturumunuz HTTPS ve Supabase Auth ile korunur. ' +
+            'Şifreniz sitede açık metin olarak saklanmaz. ' +
+            'Sipariş için İletişim veya WhatsApp kanalını kullanabilirsiniz.' +
+            '</p>' +
+            '</div></div>';
+
+        document.getElementById('btnCikis').addEventListener('click', logout);
+        document.getElementById('btnCikis2').addEventListener('click', logout);
+    }
+
+    supabase.auth.getSession().then(function (res) {
+        if (!res.data || !res.data.session || !res.data.session.user) {
+            window.location.href = 'giris.html';
+            return;
+        }
+        render(res.data.session.user);
+    }).catch(function () {
+        window.location.href = 'giris.html';
+    });
+})();
+</script>
 
 </body>
 </html>
