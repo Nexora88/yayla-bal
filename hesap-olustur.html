@@ -19,7 +19,7 @@
 
         .form-container {
             width: 100%;
-            max-width: 440px;
+            max-width: 460px;
             background: var(--beyaz);
             padding: 40px 36px;
             border-radius: var(--radius);
@@ -80,10 +80,10 @@
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            margin: 18px 0 8px;
-            font-size: 0.88rem;
+            margin: 14px 0;
+            font-size: 0.86rem;
             color: var(--gri);
-            line-height: 1.45;
+            line-height: 1.5;
         }
 
         .form-check input {
@@ -94,6 +94,12 @@
             accent-color: var(--yesil);
         }
 
+        .form-check a {
+            color: var(--yesil);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
         .form-container .btn {
             width: 100%;
             margin-top: 12px;
@@ -101,6 +107,12 @@
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-container .btn:disabled {
+            opacity: 0.65;
+            cursor: wait;
         }
 
         .form-footer {
@@ -115,22 +127,26 @@
             font-weight: 600;
         }
 
-        .form-footer a:hover {
-            color: var(--altin);
+        .msg {
+            display: none;
+            margin-bottom: 16px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            line-height: 1.5;
         }
+
+        .msg-error { background: #fdecea; color: #8b2e2e; }
+        .msg-ok { background: #e6f2ea; color: var(--yesil); }
 
         .form-note {
-            margin-top: 20px;
-            padding: 14px 16px;
+            margin-top: 18px;
+            padding: 12px 14px;
             background: #f8f5ec;
             border-radius: 10px;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: #7a6e5a;
-            line-height: 1.55;
-        }
-
-        .form-note strong {
-            color: var(--yesil);
+            line-height: 1.5;
         }
 
         .security-badge {
@@ -138,7 +154,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            margin-top: 18px;
+            margin-top: 16px;
             font-size: 0.8rem;
             color: #6a7a6e;
         }
@@ -160,7 +176,10 @@
                 <li><a href="hakkimizda.html">Hakkımızda</a></li>
                 <li><a href="urunler.html">Ürünler</a></li>
                 <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="bilgi.html">Bilgi</a></li>
                 <li><a href="iletisim.html">İletişim</a></li>
+                <li><a href="sepet.html">Sepet <span data-cart-count></span></a></li>
+                <li><a href="giris.html" class="active">Giriş</a></li>
             </ul>
         </nav>
     </div>
@@ -176,13 +195,14 @@
         <h1>Hesap oluştur</h1>
         <p class="sub">Saros Doğal Yayla Balı üyelik formu</p>
 
-        <form id="kayitForm" action="#" method="post" autocomplete="on" novalidate>
+        <div id="msg" class="msg" role="alert"></div>
+
+        <form id="kayitForm" autocomplete="on">
             <div class="form-group">
                 <label for="adsoyad">Ad Soyad</label>
                 <input type="text" id="adsoyad" name="adsoyad" required
                        placeholder="Adınız ve soyadınız"
-                       autocomplete="name"
-                       maxlength="80"
+                       autocomplete="name" maxlength="80"
                        pattern="[A-Za-zÇçĞğİıÖöŞşÜü\s]{2,80}">
             </div>
 
@@ -190,8 +210,7 @@
                 <label for="email">E-posta</label>
                 <input type="email" id="email" name="email" required
                        placeholder="ornek@email.com"
-                       autocomplete="email"
-                       maxlength="120">
+                       autocomplete="email" maxlength="120">
             </div>
 
             <div class="form-group">
@@ -199,9 +218,8 @@
                 <input type="password" id="sifre" name="sifre" required
                        placeholder="En az 8 karakter"
                        autocomplete="new-password"
-                       minlength="8"
-                       maxlength="64">
-                <span class="hint">En az 8 karakter · Harf ve rakam kullanmanız önerilir</span>
+                       minlength="8" maxlength="64">
+                <span class="hint">En az 8 karakter · Harf ve rakam önerilir</span>
             </div>
 
             <div class="form-group">
@@ -209,16 +227,23 @@
                 <input type="password" id="sifre2" name="sifre2" required
                        placeholder="Şifrenizi tekrar girin"
                        autocomplete="new-password"
-                       minlength="8"
-                       maxlength="64">
+                       minlength="8" maxlength="64">
             </div>
+
+            <label class="form-check">
+                <input type="checkbox" id="sozlesme" name="sozlesme" required>
+                <span>
+                    <a href="kullanici-sozlesmesi.html" target="_blank" rel="noopener">Kullanıcı Sözleşmesi</a>'ni
+                    okudum ve kabul ediyorum.
+                </span>
+            </label>
 
             <label class="form-check">
                 <input type="checkbox" id="kvkk" name="kvkk" required>
                 <span>
-                    Kişisel verilerimin, yalnızca üyelik ve sipariş süreçleri
-                    kapsamında işlenebileceğini kabul ediyorum.
-                    (KVKK aydınlatma metni üyelik sistemi aktif olduğunda yayımlanacaktır.)
+                    <a href="kvkk.html" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a>'ni
+                    okudum; kişisel verilerimin üyelik ve sipariş süreçleri
+                    kapsamında işlenmesini kabul ediyorum.
                 </span>
             </label>
 
@@ -227,7 +252,7 @@
                 <span>18 yaşını doldurduğumu beyan ederim.</span>
             </label>
 
-            <button type="submit" class="btn">Hesap Oluştur</button>
+            <button type="submit" class="btn" id="btnKayit">Hesap Oluştur</button>
         </form>
 
         <div class="form-footer">
@@ -236,16 +261,14 @@
         </div>
 
         <p class="form-note">
-            <strong>Önemli güvenlik notu:</strong>
-            Üyelik sistemi henüz aktif değildir. Bu form şu an veri göndermez
-            ve hiçbir şifre veya kişisel bilgi sunucuya kaydedilmez.
-            Sipariş ve iletişim için
-            <a href="iletisim.html" style="color: var(--yesil); font-weight: 600;">İletişim</a>
-            sayfasını veya WhatsApp kanalımızı kullanınız.
+            Kayıt işlemi HTTPS üzerinden gerçekleştirilir.
+            Şifreniz sitede saklanmaz; kimlik doğrulama
+            Supabase altyapısı ile yürütülür.
+            E-posta doğrulaması açıksa gelen kutunuzu kontrol ediniz.
         </p>
 
         <div class="security-badge">
-            🔒 Bağlantı HTTPS ile korunur · Veri saklanmaz
+            🔒 HTTPS · Supabase Auth · KVKK onayı zorunlu
         </div>
     </div>
 </div>
@@ -265,10 +288,10 @@
                 <h3>Hızlı Bağlantılar</h3>
                 <ul>
                     <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
                     <li><a href="urunler.html">Ürünler</a></li>
-                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="bilgi.html">Bilgi</a></li>
                     <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="giris.html">Giriş</a></li>
                 </ul>
             </div>
             <div class="footer-box">
@@ -280,58 +303,109 @@
         </div>
         <div class="footer-bottom">
             <p>© 2026 Saros Doğal Yayla Balı. Tüm hakları saklıdır.</p>
+            <p style="margin-top:8px; font-size:0.8rem; opacity:0.85;">
+                Bu site Ahmet Eymen Bakraç tarafından hazırlanmıştır.
+            </p>
         </div>
     </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
 <script>
 (function () {
     'use strict';
 
+    /* giris.html ile AYNI değerler */
+    var SUPABASE_URL = 'https://xodozoflwoxglxqjlilx.supabase.co';
+    var SUPABASE_ANON_KEY = 'sb_publishable_LHWNEkyFebxKF_YNYANhug_uF6tmdBP';
+
+    var supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
     var form = document.getElementById('kayitForm');
-    if (!form) return;
+    var btn = document.getElementById('btnKayit');
+    var msg = document.getElementById('msg');
 
-    form.addEventListener('submit', function (e) {
+    function showMsg(text, ok) {
+        msg.style.display = 'block';
+        msg.className = 'msg ' + (ok ? 'msg-ok' : 'msg-error');
+        msg.textContent = text;
+    }
+
+    form.addEventListener('submit', async function (e) {
         e.preventDefault();
+        msg.style.display = 'none';
 
+        var ad = document.getElementById('adsoyad').value.trim();
+        var email = document.getElementById('email').value.trim();
         var sifre = document.getElementById('sifre').value;
         var sifre2 = document.getElementById('sifre2').value;
-        var email = document.getElementById('email').value.trim();
-        var ad = document.getElementById('adsoyad').value.trim();
 
         if (ad.length < 2) {
-            alert('Lütfen geçerli bir ad soyad giriniz.');
+            showMsg('Lütfen geçerli bir ad soyad giriniz.', false);
             return;
         }
-
-        if (!email || email.indexOf('@') < 1) {
-            alert('Lütfen geçerli bir e-posta adresi giriniz.');
-            return;
-        }
-
         if (sifre.length < 8) {
-            alert('Şifre en az 8 karakter olmalıdır.');
+            showMsg('Şifre en az 8 karakter olmalıdır.', false);
             return;
         }
-
         if (sifre !== sifre2) {
-            alert('Şifreler eşleşmiyor. Lütfen kontrol ediniz.');
+            showMsg('Şifreler eşleşmiyor.', false);
+            return;
+        }
+        if (!document.getElementById('sozlesme').checked ||
+            !document.getElementById('kvkk').checked ||
+            !document.getElementById('yas').checked) {
+            showMsg('Devam etmek için tüm onay kutularını işaretleyiniz.', false);
             return;
         }
 
-        if (!document.getElementById('kvkk').checked || !document.getElementById('yas').checked) {
-            alert('Devam etmek için gerekli onay kutularını işaretleyiniz.');
-            return;
+        btn.disabled = true;
+        btn.textContent = 'Kaydediliyor...';
+
+        try {
+            var result = await supabase.auth.signUp({
+                email: email,
+                password: sifre,
+                options: {
+                    data: {
+                        full_name: ad,
+                        kvkk_accepted: true,
+                        sozlesme_accepted: true,
+                        accepted_at: new Date().toISOString()
+                    }
+                }
+            });
+
+            if (result.error) {
+                showMsg(result.error.message || 'Kayıt başarısız. Lütfen tekrar deneyiniz.', false);
+                btn.disabled = false;
+                btn.textContent = 'Hesap Oluştur';
+                return;
+            }
+
+            /* E-posta onayı açıksa kullanıcıya bilgi ver */
+            if (result.data && result.data.user && !result.data.session) {
+                showMsg(
+                    'Kayıt alındı. E-posta adresinize doğrulama bağlantısı gönderilmiş olabilir. ' +
+                    'Onayladıktan sonra giriş yapabilirsiniz.',
+                    true
+                );
+                form.reset();
+                btn.disabled = false;
+                btn.textContent = 'Hesap Oluştur';
+                return;
+            }
+
+            showMsg('Hesabınız oluşturuldu. Yönlendiriliyorsunuz...', true);
+            setTimeout(function () {
+                window.location.href = 'hesap.html';
+            }, 1000);
+        } catch (err) {
+            showMsg('Bağlantı hatası. Lütfen tekrar deneyiniz.', false);
+            btn.disabled = false;
+            btn.textContent = 'Hesap Oluştur';
         }
-
-        // Güvenlik: Şifre veya kişisel veri localStorage / sunucuya yazılmaz.
-        alert(
-            'Üyelik sistemi henüz aktif değildir.\n\n' +
-            'Hiçbir bilgileriniz kaydedilmemiştir.\n' +
-            'Sipariş için İletişim sayfasını veya WhatsApp kanalımızı kullanabilirsiniz.'
-        );
-
-        form.reset();
     });
 })();
 </script>
