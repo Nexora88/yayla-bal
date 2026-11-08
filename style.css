@@ -970,3 +970,73 @@ footer {
     }
 }
 
+
+
+/* Inner-page hero: restore the prominent apiary bee silhouette, not a plain title band. */
+.page-header-premium {
+    min-height: 245px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 68px 24px 64px;
+    text-align: center;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        linear-gradient(105deg, rgba(12, 34, 24, .88), rgba(24, 58, 39, .76) 58%, rgba(22, 43, 30, .82)),
+        url("assets/images/arilik.jpg") center 44% / cover no-repeat;
+    border-bottom: 4px solid var(--altin);
+}
+.page-header-premium::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    inset: 0 auto 0 0;
+    width: 34%;
+    opacity: .12;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='160' viewBox='0 0 180 160'%3E%3Cg fill='none' stroke='%23e6bd68' stroke-width='2'%3E%3Cpath d='M30 2 54 16v28L30 58 6 44V16zm72 0 24 14v28l-24 14-24-14V16zm48 56 24 14v28l-24 14-24-14V72zM30 102l24 14v28l-24 14-24-14v-28z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 150px 134px;
+}
+.page-header-premium::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    right: clamp(24px, 7vw, 112px);
+    width: clamp(210px, 25vw, 340px);
+    height: 220px;
+    transform: translateY(-50%) rotate(-5deg);
+    opacity: .38;
+    pointer-events: none;
+    background: center / contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 240'%3E%3Cg fill='%23edc56f'%3E%3Cellipse cx='142' cy='76' rx='54' ry='30' transform='rotate(-32 142 76)'/%3E%3Cellipse cx='218' cy='76' rx='54' ry='30' transform='rotate(32 218 76)'/%3E%3Cellipse cx='180' cy='139' rx='76' ry='43'/%3E%3Cpath d='M107 119h146v16H107zm-2 34h150v17H105z'/%3E%3Ccircle cx='180' cy='47' r='28'/%3E%3Cpath d='m163 25-23-24-7 6 19 28m49-10 23-24 7 6-19 28' fill='none' stroke='%23edc56f' stroke-width='9' stroke-linecap='round'/%3E%3C/g%3E%3Cpath d='M265 123c28-5 43-22 55-43m-55 77c33 4 48 17 62 35' fill='none' stroke='%23edc56f' stroke-width='4' stroke-linecap='round' stroke-dasharray='2 12'/%3E%3C/svg%3E");
+}
+.page-header-premium > * {
+    position: relative;
+    z-index: 1;
+}
+.page-header-premium h1 {
+    text-shadow: 0 3px 18px rgba(0, 0, 0, .3);
+}
+.page-header-premium p {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .35);
+}
+@media (max-width: 640px) {
+    .page-header-premium {
+        min-height: 205px;
+        padding: 56px 18px 48px;
+        background-position: center, 58% center;
+    }
+    .page-header-premium::after {
+        right: -42px;
+        width: 190px;
+        height: 150px;
+        opacity: .2;
+    }
+    .page-header-premium::before {
+        width: 42%;
+        opacity: .08;
+    }
+}
