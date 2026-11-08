@@ -728,3 +728,16 @@ img{height:auto}
 .istanbul-story h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.2;margin:12px 0 16px;color:var(--koyu-yesil)}
 .istanbul-story p{max-width:680px;margin:0 auto 24px;color:var(--gri);line-height:1.8}
 @media(max-width:680px){.section-istanbul{padding:48px 16px}.istanbul-story{padding:34px 20px}}
+
+
+/* Shared premium treatment for every inner page */
+.page-header-premium{position:relative;text-align:center;padding:76px 20px 68px;color:#fff;background:linear-gradient(135deg,rgba(13,39,29,.97),rgba(40,90,67,.94)),url("assets/images/yayla.jpg") center/cover no-repeat}
+.page-header-premium h1{color:#fff;font-size:clamp(2rem,4.4vw,3.35rem);line-height:1.12;margin:0 0 12px}
+.page-header-premium p{color:rgba(255,255,255,.84);max-width:680px;margin:0 auto;font-size:1.02rem}
+.site-credit{margin-top:8px;font-size:.82rem;opacity:.82;letter-spacing:.01em}
+.account-info-card,.legal-wrap{max-width:820px;margin:0 auto;background:#fff;border:1px solid rgba(31,77,59,.08);border-radius:var(--radius);box-shadow:var(--golge);padding:clamp(26px,5vw,48px)}
+.account-info-card h2{font-size:clamp(1.45rem,3vw,2rem);line-height:1.25;margin:4px 0 18px;color:var(--yesil)}
+.account-info-card p,.legal-wrap p{color:var(--gri);line-height:1.8;margin:0 0 16px}
+.account-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.account-actions .btn{display:inline-flex;align-items:center;justify-content:center}
+@media(max-width:640px){.page-header-premium{padding:58px 18px 52px}.account-actions{flex-direction:column}.account-actions .btn{width:100%;max-width:none}}
