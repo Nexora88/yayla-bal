@@ -964,3 +964,14 @@ footer {
     .section-process { padding-block: 48px; }
     .catalog-intro { padding: 20px; }
 }
+
+/* Inline legacy section colors are normalized to the same Saros palette. */
+.section[style*="background"] {
+    background: linear-gradient(135deg, #ead9b6 0%, #f4e9d2 100%) !important;
+}
+.page-header-premium ~ .section:nth-of-type(odd) {
+    background: linear-gradient(135deg, #e6d2a8 0%, #f3e6cb 100%);
+}
+.page-header-premium ~ .section:nth-of-type(even) {
+    background: linear-gradient(135deg, #f8efdf 0%, #ead9b8 100%);
+}
