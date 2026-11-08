@@ -167,6 +167,13 @@
         description.textContent = product.description || '';
         content.appendChild(description);
 
+        if (product.details) {
+            var details = document.createElement('p');
+            details.className = 'product-details';
+            details.textContent = product.details;
+            content.appendChild(details);
+        }
+
         if (!compact) {
             var price = document.createElement('strong');
             price.className = 'product-price';
