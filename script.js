@@ -241,7 +241,7 @@
             var query = (searchInput ? searchInput.value : '').trim().toLocaleLowerCase('tr-TR');
             var filtered = allProducts.filter(function (product) {
                 var matchesCategory = activeCategory === 'all' || product.category === activeCategory;
-                var haystack = (product.name + ' ' + product.description + ' ' + product.category).toLocaleLowerCase('tr-TR');
+                var haystack = (product.name + ' ' + product.description + ' ' + (product.details || '') + ' ' + product.category).toLocaleLowerCase('tr-TR');
                 return matchesCategory && haystack.indexOf(query) !== -1;
             });
             target.replaceChildren();
