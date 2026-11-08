@@ -1,378 +1,51 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ürünler | Saros Doğal Yayla Balı</title>
-    <meta name="description" content="Saros Doğal Yayla Balı ürünleri. Edirne Keşan Yaylaköy'den süzme çiçek balı, petek bal, polen ve arı sütü.">
+    <meta name="theme-color" content="#123126">
+    <meta name="description" content="Saros Doğal Yayla Balı ürün kataloğu. Edirne Keşan Yaylaköy · İstanbul’a sipariş bilgisi için iletişim’den İstanbul’a uzanan aile üretimi ve sezonluk arı ürünleri.">
+    <title>Ürünlerimiz | Saros Doğal Yayla Balı</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .products-page {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 28px;
-        }
-
-        .product-detail-card {
-            background: var(--beyaz);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--golge);
-            transition: var(--gecis);
-            display: flex;
-            flex-direction: column;
-            border: 1.5px solid transparent;
-        }
-
-        .product-detail-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--golge-hover);
-            border-color: rgba(212, 167, 44, 0.3);
-        }
-
-        .product-detail-card img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            background: var(--krem-koyu);
-        }
-
-        .product-info {
-            padding: 24px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-info h2 {
-            font-size: 1.35rem;
-            margin-bottom: 6px;
-        }
-
-        .product-meta {
-            font-size: 0.9rem;
-            color: var(--gri);
-            margin-bottom: 12px;
-        }
-
-        .product-info > p {
-            font-size: 0.95rem;
-            margin-bottom: 16px;
-            flex: 1;
-        }
-
-        .product-price {
-            display: block;
-            font-size: 1.75rem;
-            color: var(--altin);
-            font-weight: 700;
-            margin: 4px 0 12px;
-            font-family: 'DM Sans', sans-serif;
-        }
-
-        .stock {
-            display: inline-block;
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.82rem;
-            margin-bottom: 14px;
-        }
-
-        .stock-var { background: #e6f2ea; color: var(--yesil); }
-        .stock-yok { background: #f5f0e8; color: #8b7355; }
-        .stock-yakinda { background: #fff3d6; color: #9a7b1a; }
-
-        .product-net {
-            font-size: 0.88rem;
-            color: var(--gri);
-            margin-bottom: 8px;
-        }
-
-        .product-note {
-            font-size: 0.8rem;
-            color: #888;
-            margin-top: 12px;
-            line-height: 1.5;
-            border-top: 1px solid #eee;
-            padding-top: 12px;
-        }
-
-        .info-banner {
-            background: var(--beyaz);
-            border-radius: var(--radius);
-            padding: 28px 32px;
-            box-shadow: var(--golge);
-            margin-bottom: 48px;
-            border-left: 4px solid var(--altin);
-        }
-
-        .info-banner h2 { font-size: 1.25rem; margin-bottom: 10px; }
-        .info-banner p { font-size: 0.95rem; margin-bottom: 0; }
-
-        .product-actions {
-            margin-top: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .product-actions .btn {
-            width: 100%;
-            text-align: center;
-            padding: 12px 20px;
-            font-size: 0.9rem;
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-        }
-
-        .btn-disabled {
-            background: #ddd !important;
-            color: #888 !important;
-            box-shadow: none !important;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-
-        .btn-outline-prod {
-            background: transparent !important;
-            border: 2px solid var(--yesil) !important;
-            color: var(--yesil) !important;
-            box-shadow: none !important;
-        }
-
-        @media (max-width: 600px) {
-            .products-page {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-        }
-    </style>
 </head>
-
 <body>
-
 <header>
     <div class="header-container">
-        <div class="logo">
-            <a href="index.html">
-                <img src="assets/images/logo.png" alt="Saros Doğal Yayla Balı">
-            </a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                <li><a href="urunler.html" class="active">Ürünler</a></li>
-                <li><a href="galeri.html">Galeri</a></li>
-                <li><a href="bilgi.html">Bilgi</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-                <li><a href="sepet.html">Sepet <span data-cart-count></span></a></li>
-                <li><a href="giris.html">Giriş</a></li>
-            </ul>
-        </nav>
+        <div class="logo"><a href="index.html" aria-label="Ana sayfa"><img src="assets/images/logo.png" alt="Saros Doğal Yayla Balı"></a></div>
+        <nav aria-label="Ana menü"><ul>
+            <li><a href="index.html">Ana Sayfa</a></li><li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="urunler.html" class="active">Ürünler</a></li><li><a href="galeri.html">Galeri</a></li>
+            <li><a href="bilgi.html">Bilgi</a></li><li><a href="iletisim.html">İletişim</a></li>
+            <li><a href="sepet.html">Sepet <span data-cart-count></span></a></li><li><a href="giris.html">Giriş</a></li>
+        </ul></nav>
     </div>
 </header>
-
-<section class="page-header">
-    <h1>Ürünlerimiz</h1>
-    <p>Yaylaköy'ün doğal florasından, aile emeğiyle</p>
-</section>
-
-<section class="section">
-    <div class="container">
-
-        <div class="info-banner">
-            <h2>Üretim Bilgisi</h2>
-            <p>
-                Tüm ürünlerimiz Edirne Keşan Yaylaköy'de, Ahmet Bakraç
-                öncülüğünde ailece üretilir. Arıcılık İşletme No:
-                <strong>220000716718</strong> · Menşe: Türkiye ·
-                Üretim yılı: 2026. Ballarımıza şeker şurubu, glikoz
-                veya yapay katkı eklenmez.
-            </p>
-        </div>
-
-        <div class="products-page">
-
-            <!-- SÜZME ÇİÇEK BALI -->
-            <article class="product-detail-card">
-                <img src="assets/images/bal.png" alt="Saros Doğal Yayla Balı - Süzme Çiçek Balı 850 g">
-                <div class="product-info">
-                    <h2>Süzme Çiçek Balı</h2>
-                    <p class="product-meta">Saros Doğal Yayla Balı</p>
-                    <span class="stock stock-var">✓ Stokta</span>
-                    <p class="product-net">Net: 850 g &nbsp;·&nbsp; 660 cc &nbsp;(± %3)</p>
-                    <span class="product-price">500 ₺</span>
-                    <p>
-                        Edirne Keşan Yaylaköy'ün doğal florasından
-                        elde edilen süzme çiçek balı. Geleneksel
-                        yöntemlerle, katkı maddesi kullanılmadan
-                        üretilir. Doğanın sunduğu en saf
-                        lezzetlerden biridir.
-                    </p>
-                    <div class="product-actions">
-                        <button type="button" class="btn"
-                            data-add-cart
-                            data-id="suzme-850"
-                            data-name="Süzme Çiçek Balı"
-                            data-price="500"
-                            data-net="850 g · 660 cc"
-                            data-img="assets/images/bal.png">
-                            Sepete Ekle
-                        </button>
-                        <a href="sepet.html" class="btn btn-outline-prod">Sepete Git</a>
-                    </div>
-                    <p class="product-note">
-                        Saklama: Serin, kuru ve güneş ışığından uzak
-                        yerde muhafaza ediniz. Kristalleşme doğal bir
-                        olaydır; balın kalitesini etkilemez. Ilık su
-                        banyosunda çözündürerek tüketebilirsiniz.
-                        1 yaşından küçük bebeklere bal yedirilmemelidir.
-                    </p>
+<main>
+    <section class="page-header page-header-premium"><span class="eyebrow">YAYLAKÖY'DEN SOFRANIZA</span><h1>Ürünlerimiz</h1><p>Yaylaköy’den İstanbul’daki sofralara uzanan ürünlerimizi ve sezonluk üretimimizi keşfedin.</p></section>
+    <section class="section">
+        <div class="container">
+            <div class="catalog-intro"><div><span class="eyebrow eyebrow-dark">SAROS KATALOĞU</span><h2>Üretimimize yakından bakın.</h2><p>Stok ve ürün bilgilerini tek katalog üzerinden güncel tutuyoruz. Satışta olmayan ürünler siparişe açık gösterilmez.</p></div><div class="catalog-note"><strong>Üretici bilgisi</strong><span>Edirne · Keşan · Yaylaköy</span><span>Ahmet Bakraç öncülüğünde aile üretimi</span></div></div>
+            <div class="catalog-toolbar">
+                <label class="catalog-search"><span class="sr-only">Ürün ara</span><input type="search" id="product-search" placeholder="Ürün ara..." autocomplete="off"></label>
+                <div class="catalog-filters" role="group" aria-label="Ürün kategorileri">
+                    <button type="button" class="filter-chip active" data-category="all" aria-pressed="true">Tümü</button>
+                    <button type="button" class="filter-chip" data-category="Bal" aria-pressed="false">Bal</button>
+                    <button type="button" class="filter-chip" data-category="Arı Ürünleri" aria-pressed="false">Arı ürünleri</button>
                 </div>
-            </article>
-
-            <!-- PETEK BAL -->
-            <article class="product-detail-card">
-                <img src="assets/images/petek.jpg" alt="Saros Doğal Yayla Balı - Petek Bal">
-                <div class="product-info">
-                    <h2>Petek Bal</h2>
-                    <p class="product-meta">Saros Doğal Yayla Balı</p>
-                    <span class="stock stock-yakinda">Yakında gelecek</span>
-                    <p class="product-net">Doğal petek yapısında</p>
-                    <span class="product-price" style="color: var(--gri); font-size: 1.2rem;">—</span>
-                    <p>
-                        Arıların doğal olarak ördüğü petek içinde
-                        sunulan bal. Petek yapısı korunarak
-                        hazırlanır; geleneksel bir tercih arayanlar için.
-                    </p>
-                    <div class="product-actions">
-                        <span class="btn btn-disabled">Stokta yok</span>
-                    </div>
-                    <p class="product-note">
-                        Bu ürün henüz satışa sunulmamıştır.
-                        Yeni hasat ve stok duyuruları için
-                        WhatsApp kanalımızı takip edebilirsiniz.
-                    </p>
-                </div>
-            </article>
-
-            <!-- POLEN -->
-            <article class="product-detail-card">
-                <img src="assets/images/polen.png" alt="Saros Doğal Yayla Balı - Doğal Polen">
-                <div class="product-info">
-                    <h2>Doğal Polen</h2>
-                    <p class="product-meta">Saros Doğal Yayla Balı</p>
-                    <span class="stock stock-yok">Stokta yok</span>
-                    <p class="product-net">Arılardan elde edilen polen</p>
-                    <span class="product-price" style="color: var(--gri); font-size: 1.2rem;">—</span>
-                    <p>
-                        Arılarımızın Yaylaköy çevresindeki doğal
-                        bitki örtüsünden topladığı polen.
-                        Özenle kurutulup paketlenir.
-                    </p>
-                    <div class="product-actions">
-                        <span class="btn btn-disabled">Stokta yok</span>
-                    </div>
-                    <p class="product-note">
-                        Stok durumu hasat dönemine göre değişir.
-                        Güncel bilgi için bizimle iletişime geçebilir
-                        veya WhatsApp kanalımızı takip edebilirsiniz.
-                    </p>
-                </div>
-            </article>
-
-            <!-- ARI SÜTÜ -->
-            <article class="product-detail-card">
-                <img src="assets/images/bal.png" alt="Saros Doğal Yayla Balı - Arı Sütü" style="opacity: 0.85; filter: saturate(0.7);">
-                <div class="product-info">
-                    <h2>Arı Sütü</h2>
-                    <p class="product-meta">Saros Doğal Yayla Balı</p>
-                    <span class="stock stock-yok">Stokta yok</span>
-                    <p class="product-net">Sınırlı üretim</p>
-                    <span class="product-price" style="color: var(--gri); font-size: 1.2rem;">—</span>
-                    <p>
-                        Arı kolonilerimizden elde edilen arı sütü.
-                        Üretim miktarı sınırlıdır; stok durumu
-                        sezona göre değişiklik gösterir.
-                    </p>
-                    <div class="product-actions">
-                        <span class="btn btn-disabled">Stokta yok</span>
-                    </div>
-                    <p class="product-note">
-                        Bu ürün şu an stoklarımızda bulunmamaktadır.
-                        Yeni üretim ve stok bilgisi için iletişime
-                        geçebilirsiniz.
-                    </p>
-                </div>
-            </article>
-
-        </div>
-
-        <div style="margin-top: 56px; max-width: 720px; margin-left: auto; margin-right: auto; text-align: center;">
-            <p style="font-size: 0.95rem; color: var(--gri); margin-bottom: 24px;">
-                Sipariş ve stok sorularınız için bizimle iletişime geçin.
-                Kristalleşme ve saklama hakkında
-                <a href="bilgi.html" style="color: var(--yesil); font-weight: 600;">Bilgi</a>
-                sayfasını inceleyebilirsiniz.
-            </p>
-            <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-                <a href="iletisim.html" class="btn">İletişime Geç</a>
-                <a href="https://whatsapp.com/channel/0029Vb8Gn8n002TFbr7MXw1a"
-                   target="_blank" rel="noopener"
-                   class="btn"
-                   style="background: #25D366; color: white; box-shadow: 0 4px 14px rgba(37,211,102,0.35);">
-                    WhatsApp Kanalı
-                </a>
             </div>
-        </div>
-
-    </div>
-</section>
-
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-box">
-                <img src="assets/images/logo.png" alt="Saros Doğal Yayla Balı" style="width:130px;">
-                <p>
-                    Saros Doğal Yayla Balı,
-                    Edirne Keşan Yaylaköy'den
-                    doğal üretim anlayışıyla sizlere ulaşır.
-                </p>
+            <p class="catalog-count" id="catalog-count" aria-live="polite">Ürün kataloğu yükleniyor…</p>
+            <div class="catalog-grid" id="product-catalog" aria-live="polite">
+                <article class="product-detail-card"><img src="assets/images/bal.png" alt="Süzme Çiçek Balı" loading="lazy"><div class="product-info"><span class="stock stock-var">Stokta</span><h2>Süzme Çiçek Balı</h2><p class="product-net">Net 850 g · 660 cc (± %3)</p><p>Yaylaköy'deki arılığımızdan aile emeğiyle elde edilen süzme çiçek balı.</p><span class="product-price">750 ₺</span><a href="iletisim.html" class="btn">Ürünü sor</a></div></article>
             </div>
-            <div class="footer-box">
-                <h3>Hızlı Bağlantılar</h3>
-                <ul>
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                    <li><a href="urunler.html">Ürünler</a></li>
-                    <li><a href="galeri.html">Galeri</a></li>
-                    <li><a href="bilgi.html">Bilgi</a></li>
-                    <li><a href="iletisim.html">İletişim</a></li>
-                </ul>
-            </div>
-            <div class="footer-box">
-                <h3>İletişim</h3>
-                <p>📍 Edirne Keşan Yaylaköy</p>
-                <p>🐝 Kurucu: Ahmet Bakraç</p>
-                <p>🍯 Saros Doğal Yayla Balı</p>
-            </div>
+            <div class="catalog-contact"><h2>Ürün veya stok hakkında sorunuz mu var?</h2><p>İstanbul’dan sipariş vermek, teslimat seçeneklerini ve güncel stok bilgisini öğrenmek için bize ulaşın.</p><a href="iletisim.html" class="btn">İletişime Geç</a></div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 Saros Doğal Yayla Balı. Tüm hakları saklıdır.</p>
-            <p style="margin-top:8px; font-size:0.8rem; opacity:0.85;">
-                Bu site Ahmet Eymen Bakraç tarafından hazırlanmıştır.
-            </p>
-        </div>
-    </div>
-</footer>
-
-<script src="script.js"></script>
-
+    </section>
+</main>
+<footer><div class="container"><div class="footer-content">
+    <div class="footer-box"><img src="assets/images/logo.png" alt="Saros Doğal Yayla Balı" style="width:130px;" loading="lazy"><p>Edirne Keşan Yaylaköy'den, aile emeğiyle sofralarınıza.</p></div>
+    <div class="footer-box"><h3>Keşfet</h3><ul><li><a href="index.html">Ana Sayfa</a></li><li><a href="hakkimizda.html">Hakkımızda</a></li><li><a href="urunler.html">Ürünler</a></li><li><a href="galeri.html">Galeri</a></li></ul></div>
+    <div class="footer-box"><h3>İletişim</h3><p>📍 Edirne Keşan Yaylaköy</p><p>🐝 Kurucu: Ahmet Bakraç</p></div>
+</div><div class="footer-bottom"><p>© 2026 Saros Doğal Yayla Balı. Tüm hakları saklıdır.</p></div></div></footer>
+<script src="script.js" defer></script>
 </body>
 </html>

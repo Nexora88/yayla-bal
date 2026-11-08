@@ -1,26 +1,32 @@
 [
   {
-    "id": 1,
-    "name": "Yaylaköy Çiçek Balı",
-    "description": "Edirne Keşan Yaylaköy bölgesinden elde edilen doğal çiçek balı.",
-    "price": "500 TL",
-    "weight": "1000 g",
-    "image": "assets/images/cicek-bali.jpg"
+    "id": "suzme-cicek-bali-850",
+    "name": "Süzme Çiçek Balı",
+    "category": "Bal",
+    "description": "Edirne Keşan Yaylaköy'deki arılığımızdan, aile emeğiyle elde edilen süzme çiçek balı.",
+    "details": "Geleneksel üretim anlayışıyla hazırlanır. Kristalleşme balın doğal yapısının bir parçasıdır.",
+    "price": 750,
+    "priceLabel": "750 ₺",
+    "weight": "Net 850 g · 660 cc (± %3)",
+    "image": "assets/images/bal.png",
+    "status": "in_stock",
+    "statusLabel": "Stokta",
+    "featured": true,
+    "orderable": true
   },
   {
-    "id": 2,
-    "name": "Yaylaköy Petek Bal",
-    "description": "Doğal petek yapısıyla hazırlanan özel üretim bal.",
-    "price": "500 TL",
-    "weight": "1000 g",
-    "image": "assets/images/petek-bal.jpg"
-  },
-  {
-    "id": 3,
+    "id": "dogal-polen",
     "name": "Doğal Polen",
-    "description": "Kendi arılarımızdan elde edilen doğal polen.",
-    "price": "Yakında",
-    "weight": "Belirlenecek",
-    "image": "assets/images/polen.jpg"
+    "category": "Arı Ürünleri",
+    "description": "Arılarımızın Yaylaköy çevresindeki doğal bitki örtüsünden topladığı polen.",
+    "details": "Polen ürününün sezon ve stok bilgisi netleştiğinde satış bilgileri güncellenecektir.",
+    "price": null,
+    "priceLabel": "Stok bilgisi için iletişime geçin",
+    "weight": "Sezonluk ürün",
+    "image": "assets/images/polen.png",
+    "status": "seasonal",
+    "statusLabel": "Sezonluk · Bilgi al",
+    "featured": true,
+    "orderable": false
   }
 ]
