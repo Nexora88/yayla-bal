@@ -12,7 +12,7 @@
         .cart-wrap { padding: 50px 0 80px; }
 
         .cart-container {
-            background: var(--beyaz);
+            background: var(--yuzey);
             border-radius: var(--radius);
             box-shadow: var(--golge);
             padding: 36px 32px;
@@ -187,7 +187,7 @@
         .cart-note {
             margin-top: 24px;
             padding: 14px 16px;
-            background: #f8f5ec;
+            background: var(--yuzey-yumusak);
             border-radius: 10px;
             font-size: 0.82rem;
             color: #7a6e5a;
@@ -301,7 +301,13 @@
 (function () {
     'use strict';
 
-    function escapeHtml(value) {\n        return String(value == null ? '' : value).replace(/[&<>\"']/g, function (char) {\n            return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[char];\n        });\n    }\n\n    function render() {
+    function escapeHtml(value) {
+        return String(value == null ? '' : value).replace(/[&<>"']/g, function (char) {
+            return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char];
+        });
+    }
+
+    function render() {
         var el = document.getElementById('cartContent');
         if (!el || !window.SarosCart) return;
 
