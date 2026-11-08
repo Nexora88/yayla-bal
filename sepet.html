@@ -251,7 +251,7 @@
             <p class="cart-note">
                 <strong>Bilgi:</strong> Online ödeme sistemi henüz aktif değildir.
                 Siparişinizi tamamlamak için İletişim sayfasından veya
-                WhatsApp kanalımız üzerinden bizimle iletişime geçiniz.
+                İletişim sayfasından bize ulaşın. WhatsApp kanalımız duyurular içindir; bire bir sipariş sohbeti değildir.
                 Sepet içeriği yalnızca sizin tarayıcınızda saklanır.
             </p>
         </div>
@@ -301,7 +301,13 @@
 (function () {
     'use strict';
 
-    function escapeHtml(value) {\n        return String(value == null ? '' : value).replace(/[&<>\"']/g, function (char) {\n            return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[char];\n        });\n    }\n\n    function render() {
+    function escapeHtml(value) {
+        return String(value == null ? '' : value).replace(/[&<>\"']/g, function (char) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char];
+        });
+    }
+
+    function render() {
         var el = document.getElementById('cartContent');
         if (!el || !window.SarosCart) return;
 
@@ -324,7 +330,7 @@
             total += item.price * item.qty;
             html +=
                 '<div class="cart-item">' +
-                '<img src="' + (item.img || 'assets/images/bal.png') + '" alt="">' +
+                '<img src="' + escapeHtml(item.img || 'assets/images/bal.png') + '" alt="">' +
                 '<div class="cart-item-info">' +
                 '<h3>' + escapeHtml(item.name) + '</h3>' +
                 '<p class="meta">' + escapeHtml(item.net || '') + '</p>' +
@@ -332,11 +338,11 @@
                 '</div>' +
                 '<div class="cart-item-actions">' +
                 '<div class="qty-control">' +
-                '<button type="button" data-action="minus" data-id="' + item.id + '" aria-label="Azalt">−</button>' +
+                '<button type="button" data-action="minus" data-id="' + escapeHtml(item.id) + '" aria-label="Azalt">−</button>' +
                 '<span>' + item.qty + '</span>' +
-                '<button type="button" data-action="plus" data-id="' + item.id + '" aria-label="Artır">+</button>' +
+                '<button type="button" data-action="plus" data-id="' + escapeHtml(item.id) + '" aria-label="Artır">+</button>' +
                 '</div>' +
-                '<button type="button" class="btn-remove" data-action="remove" data-id="' + item.id + '">Kaldır</button>' +
+                '<button type="button" class="btn-remove" data-action="remove" data-id="' + escapeHtml(item.id) + '">Kaldır</button>' +
                 '</div>' +
                 '</div>';
         });

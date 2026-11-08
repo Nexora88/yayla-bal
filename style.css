@@ -832,3 +832,102 @@ header nav a.active { background: var(--yesil); color: #fffaf0; }
   .order-actions { flex-direction: column; align-items: stretch; }
   .order-actions .btn { width: 100%; max-width: none; }
 }
+
+
+/* Saros butik yüzey sistemi — işlevsel bileşenlere dokunmadan renkleri belirginleştirir. */
+:root {
+    --koyu-yesil: #203a2b;
+    --yesil: #31533d;
+    --altin: #bd8528;
+    --altin-koyu: #80551b;
+    --krem: #f3e5c9;
+    --krem-koyu: #dfc99e;
+    --beyaz: #f8efdD;
+    --gri-acik: #e9dcc1;
+    --metin: #26382b;
+    --metin-ikincil: #58604f;
+}
+body {
+    background: linear-gradient(180deg, #f0e3c9 0%, #e7d5b1 100%);
+    color: var(--metin);
+}
+header {
+    background: rgba(243, 232, 210, .97);
+    border-bottom: 1px solid rgba(128, 85, 27, .2);
+}
+.section {
+    background: linear-gradient(135deg, #f2e6ce 0%, #ead9b8 100%);
+}
+.section-story, .section-gallery {
+    background: linear-gradient(135deg, #f7efdf 0%, #e9d9b9 100%);
+}
+.section-products, .catalog-contact {
+    background: linear-gradient(135deg, #e4cf9f 0%, #f1e5cd 100%);
+}
+.section-process {
+    background: linear-gradient(135deg, #203a2b 0%, #34543a 100%);
+    color: #f8efdd;
+}
+.section-process h2, .section-process h3 { color: #fff1d3; }
+.section-process p { color: rgba(255, 245, 224, .84); }
+.process-card {
+    background: rgba(255, 246, 226, .1);
+    border: 1px solid rgba(225, 190, 119, .38);
+}
+.section-istanbul {
+    background: linear-gradient(135deg, #d9c18e 0%, #eddfc0 100%);
+}
+.section-cta {
+    background: linear-gradient(135deg, #e5d1a8 0%, #f4e9d4 100%);
+}
+.product-card, .product-detail-card, .cart-container,
+.catalog-note, .catalog-intro, .catalog-contact,
+.order-step, .order-details, .form-card, .contact-card {
+    background: #f9f0df;
+    border-color: rgba(128, 85, 27, .2);
+    box-shadow: 0 12px 30px rgba(62, 47, 25, .1);
+}
+.product-card { border-top: 4px solid var(--altin); }
+.product-card-content {
+    background: linear-gradient(180deg, #fff7e8 0%, #f1e2c3 100%);
+}
+.product-info { background: #f9f0df; }
+.product-details-copy {
+    margin-top: 9px;
+    padding: 10px 12px;
+    border-left: 3px solid var(--altin);
+    border-radius: 0 8px 8px 0;
+    background: #efe1c2;
+    color: #4d5746;
+    font-size: .9rem;
+    line-height: 1.65;
+}
+.catalog-search input, .filter-chip {
+    background: #fbf4e7;
+    border-color: #d2bd91;
+}
+.filter-chip.active, .filter-chip:hover {
+    background: var(--koyu-yesil);
+    border-color: var(--koyu-yesil);
+    color: #fff5e2;
+}
+.cart-note, .order-fact {
+    background-color: #efe2c4;
+}
+.page-header-premium {
+    background: linear-gradient(120deg, #1d3023 0%, #31533d 58%, #526b43 100%);
+    border-bottom: 4px solid var(--altin);
+}
+.btn {
+    background: linear-gradient(135deg, #d5a64e 0%, #b77d21 100%);
+    color: #203326;
+}
+.btn:hover { background: linear-gradient(135deg, #e0b65f 0%, #986419 100%); }
+footer {
+    background: linear-gradient(135deg, #19291f 0%, #263b2d 100%);
+    border-top: 4px solid var(--altin);
+}
+@media (max-width: 640px) {
+    .cart-container { padding: 26px 18px; }
+    .product-details-copy { font-size: .86rem; }
+}

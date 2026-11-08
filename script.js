@@ -167,6 +167,13 @@
         description.textContent = product.description || '';
         content.appendChild(description);
 
+        if (product.details) {
+            var details = document.createElement('p');
+            details.className = 'product-details-copy';
+            details.textContent = product.details;
+            content.appendChild(details);
+        }
+
         if (!compact) {
             var price = document.createElement('strong');
             price.className = 'product-price';
@@ -231,15 +238,15 @@
         var allProducts = [];
 
         function paint() {
-            var query = (searchInput.value || '').trim().toLocaleLowerCase('tr-TR');
+            var query = (searchInput ? searchInput.value : '').trim().toLocaleLowerCase('tr-TR');
             var filtered = allProducts.filter(function (product) {
                 var matchesCategory = activeCategory === 'all' || product.category === activeCategory;
-                var haystack = (product.name + ' ' + product.description + ' ' + product.category).toLocaleLowerCase('tr-TR');
+                var haystack = (product.name + ' ' + product.description + ' ' + (product.details || '') + ' ' + product.category).toLocaleLowerCase('tr-TR');
                 return matchesCategory && haystack.indexOf(query) !== -1;
             });
             target.replaceChildren();
             filtered.forEach(function (product) { target.appendChild(createProductCard(product, false)); });
-            count.textContent = filtered.length + ' ürün gösteriliyor';
+            if (count) count.textContent = filtered.length + ' ürün gösteriliyor';
             if (!filtered.length) {
                 var empty = document.createElement('p');
                 empty.className = 'catalog-empty';
@@ -252,7 +259,7 @@
             allProducts = products;
             paint();
         }).catch(function () {
-            count.textContent = 'Ürün bilgileri şu anda yüklenemedi. Lütfen daha sonra tekrar deneyin.';
+            if (count) count.textContent = 'Ürün bilgileri şu anda yüklenemedi. Lütfen daha sonra tekrar deneyin.';
         });
 
         if (searchInput) searchInput.addEventListener('input', paint);
