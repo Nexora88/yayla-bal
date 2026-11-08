@@ -931,3 +931,42 @@ footer {
     .cart-container { padding: 26px 18px; }
     .product-details-copy { font-size: .86rem; }
 }
+
+/* Restore the apiary atmosphere and bee silhouette on inner-page headers. */
+.page-header-premium {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        linear-gradient(105deg, rgba(13, 35, 25, .92) 0%, rgba(25, 63, 43, .82) 58%, rgba(32, 58, 43, .72) 100%),
+        url("assets/images/arilik.jpg") center 44% / cover no-repeat;
+    border-bottom: 4px solid var(--altin);
+}
+.page-header-premium::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    right: clamp(18px, 8vw, 120px);
+    width: clamp(112px, 17vw, 220px);
+    aspect-ratio: 1.25;
+    transform: translateY(-50%) rotate(-8deg);
+    opacity: .23;
+    pointer-events: none;
+    background: center / contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 190'%3E%3Cg fill='%23e5bd5b'%3E%3Cellipse cx='91' cy='60' rx='43' ry='25' transform='rotate(-30 91 60)'/%3E%3Cellipse cx='151' cy='60' rx='43' ry='25' transform='rotate(30 151 60)'/%3E%3Cellipse cx='120' cy='112' rx='61' ry='35'/%3E%3Cpath d='M67 93h106v14H67zm-5 31h116v13H62z'/%3E%3Ccircle cx='120' cy='38' r='23'/%3E%3Cpath d='M108 19 91 2l-4 4 13 20m32-7 17-17 4 4-13 20' fill='none' stroke='%23e5bd5b' stroke-width='7' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E");
+}
+.page-header-premium > * {
+    position: relative;
+    z-index: 1;
+}
+@media (max-width: 640px) {
+    .page-header-premium {
+        background-position: center, 58% center;
+    }
+    .page-header-premium::after {
+        right: 8px;
+        width: 112px;
+        opacity: .16;
+    }
+}
+
