@@ -5,15 +5,15 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 :root {
-    --yesil: #1f4d3b;
-    --koyu-yesil: #123126;
-    --altin: #d4a72c;
-    --altin-koyu: #b8922a;
-    --krem: #f7f4ec;
-    --krem-koyu: #ebe6da;
-    --beyaz: #ffffff;
-    --gri: #5c6b63;
-    --gri-acik: #f3f1eb;
+    --yesil: #31533d;
+    --koyu-yesil: #263b2d;
+    --altin: #c99532;
+    --altin-koyu: #956a20;
+    --krem: #f4ead5;
+    --krem-koyu: #e8d9b9;
+    --beyaz: #fffaf0;
+    --gri: #596456;
+    --gri-acik: #eee4d0;
     --golge: 0 8px 28px rgba(18, 49, 38, 0.08);
     --golge-hover: 0 14px 40px rgba(18, 49, 38, 0.14);
     --radius: 18px;
@@ -745,3 +745,53 @@ img{height:auto}
 
 /* Sipariş rehberi — sade, güven veren premium sunum */
 .order-intro{max-width:760px;margin:0 auto 38px;text-align:center}.order-intro p{color:var(--gri);line-height:1.8}.order-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:34px 0}.order-step{background:#fff;border:1px solid rgba(31,77,59,.09);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--golge)}.order-step .step-no{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#f1ead8;color:#876b2b;font:700 1rem 'DM Sans',sans-serif;margin-bottom:18px}.order-step h2{font-size:1.16rem;margin-bottom:10px;color:var(--yesil)}.order-step p{color:var(--gri);font-size:.94rem;line-height:1.75}.order-note{max-width:900px;margin:0 auto;background:#f2efe6;border:1px solid rgba(185,151,79,.22);border-radius:var(--radius);padding:28px 30px}.order-note h2{font-size:1.25rem;margin-bottom:10px}.order-note p{color:var(--gri);line-height:1.8;margin-bottom:12px}.order-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}.order-actions .btn{min-width:190px}@media(max-width:760px){.order-steps{grid-template-columns:1fr}.order-step{padding:24px}.order-note{padding:24px 20px}.order-actions{flex-direction:column;align-items:stretch}.order-actions .btn{width:100%;max-width:none}}
+
+
+/* =========================================================
+   SAROS HONEY COLOR SYSTEM — warm, calm, readable surfaces
+   ========================================================= */
+:root {
+    color-scheme: light;
+    --bal-koyu: #8a5a1f;
+    --bal: #c99532;
+    --bal-acik: #e8c77f;
+    --petek: #f4ead5;
+    --sut-krem: #fbf5e8;
+    --yuzey: #fff9ed;
+    --yuzey-yumusak: #f7efdF;
+    --yesil-soluk: #e5eadf;
+    --metin: #263b2d;
+    --metin-ikincil: #596456;
+}
+body { background: var(--petek); color: var(--metin); }
+header {
+    background: rgba(250, 244, 230, .96);
+    border-bottom: 1px solid rgba(138, 90, 31, .12);
+}
+header nav a:hover { background: #eee2c7; color: var(--koyu-yesil); }
+header nav a.active { background: var(--yesil); color: #fffaf0; }
+.section-products, .section-gallery { background: var(--sut-krem); }
+.trust-strip, .product-card, .value-card, .process-card,
+.catalog-note, .catalog-search input, .filter-chip,
+.catalog-empty, .istanbul-story, .account-info-card,
+.legal-wrap, .order-step {
+    background-color: var(--yuzey);
+}
+.section-process, .catalog-contact, .order-note {
+    background-color: var(--yuzey-yumusak);
+}
+.product-card { border-color: rgba(138, 90, 31, .10); }
+.catalog-grid .product-detail-card { background: var(--yuzey); border-color: rgba(138, 90, 31, .16); }
+.catalog-grid .product-info { background: var(--yuzey); }
+.catalog-search input, .filter-chip { border-color: #d9c9a8; }
+.filter-chip.active, .filter-chip:hover { background: var(--yesil); border-color: var(--yesil); color: #fffaf0; }
+.btn-secondary { background: var(--yesil-soluk); color: var(--yesil); }
+.btn-secondary:hover { background: #d7e0d1; color: var(--koyu-yesil); }
+.order-step .step-no { background: #f0dfb9; color: var(--bal-koyu); }
+.catalog-contact { border: 1px solid rgba(138, 90, 31, .14); }
+.istanbul-story { background: rgba(255, 249, 237, .94); border-color: rgba(185, 151, 79, .34); }
+.page-header-premium { background-color: var(--koyu-yesil); }
+::selection { background: #e8c77f; color: #263b2d; }
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
