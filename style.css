@@ -832,3 +832,26 @@ header nav a.active { background: var(--yesil); color: #fffaf0; }
   .order-actions { flex-direction: column; align-items: stretch; }
   .order-actions .btn { width: 100%; max-width: none; }
 }
+
+
+/* Product detail and cart: warm boutique surfaces without changing layout */
+.product-details {
+    margin-top: 12px;
+    padding: 13px 15px;
+    border-left: 3px solid var(--bal);
+    border-radius: 0 10px 10px 0;
+    background: var(--yuzey-yumusak);
+    color: var(--metin-ikincil);
+    font-size: .9rem;
+    line-height: 1.7;
+}
+.cart-container {
+    background: var(--yuzey) !important;
+    border: 1px solid rgba(138, 90, 31, .16);
+}
+.cart-item { border-bottom-color: rgba(138, 90, 31, .16) !important; }
+.cart-note {
+    background: var(--yuzey-yumusak) !important;
+    color: var(--metin-ikincil) !important;
+    border: 1px solid rgba(138, 90, 31, .12);
+}
