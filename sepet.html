@@ -340,9 +340,9 @@
                 '<div class="qty-control">' +
                 '<button type="button" data-action="minus" data-id="' + escapeHtml(item.id) + '" aria-label="Azalt">−</button>' +
                 '<span>' + item.qty + '</span>' +
-                '<button type="button" data-action="plus" data-id="' + item.id + '" aria-label="Artır">+</button>' +
+                '<button type="button" data-action="plus" data-id="' + escapeHtml(item.id) + '" aria-label="Artır">+</button>' +
                 '</div>' +
-                '<button type="button" class="btn-remove" data-action="remove" data-id="' + item.id + '">Kaldır</button>' +
+                '<button type="button" class="btn-remove" data-action="remove" data-id="' + escapeHtml(item.id) + '">Kaldır</button>' +
                 '</div>' +
                 '</div>';
         });
