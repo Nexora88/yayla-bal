@@ -720,3 +720,11 @@ img{height:auto}
  .trust-strip div+div{border-left:0;border-top:1px solid var(--krem-koyu);padding-top:10px}
  .process-grid{grid-template-columns:1fr}
 }
+
+
+/* Istanbul audience story section */
+.section-istanbul{padding:72px 20px;background:linear-gradient(135deg,#f4f0e5 0%,#e8ecdf 100%)}
+.istanbul-story{max-width:850px;margin:0 auto;text-align:center;padding:48px 34px;background:rgba(255,255,255,.78);border:1px solid rgba(185,151,79,.28);border-radius:var(--radius);box-shadow:var(--golge)}
+.istanbul-story h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.2;margin:12px 0 16px;color:var(--koyu-yesil)}
+.istanbul-story p{max-width:680px;margin:0 auto 24px;color:var(--gri);line-height:1.8}
+@media(max-width:680px){.section-istanbul{padding:48px 16px}.istanbul-story{padding:34px 20px}}
